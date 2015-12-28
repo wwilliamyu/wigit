@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E76BBA191C2F55F200807813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BBA181C2F55F200807813 /* AppDelegate.swift */; };
+		E76BBA1B1C2F55F200807813 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BBA1A1C2F55F200807813 /* FirstViewController.swift */; };
+		E76BBA1D1C2F55F200807813 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BBA1C1C2F55F200807813 /* SecondViewController.swift */; };
+		E76BBA201C2F55F200807813 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76BBA1E1C2F55F200807813 /* Main.storyboard */; };
+		E76BBA221C2F55F200807813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76BBA211C2F55F200807813 /* Assets.xcassets */; };
+		E76BBA251C2F55F200807813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76BBA231C2F55F200807813 /* LaunchScreen.storyboard */; };
+		E76BBA301C2F55F200807813 /* WigitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BBA2F1C2F55F200807813 /* WigitTests.swift */; };
+		E76BBA3B1C2F55F200807813 /* WigitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BBA3A1C2F55F200807813 /* WigitUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E76BBA2C1C2F55F200807813 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76BBA0D1C2F55F200807813 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76BBA141C2F55F200807813;
+			remoteInfo = Wigit;
+		};
+		E76BBA371C2F55F200807813 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76BBA0D1C2F55F200807813 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76BBA141C2F55F200807813;
+			remoteInfo = Wigit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E76BBA151C2F55F200807813 /* Wigit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wigit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BBA181C2F55F200807813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E76BBA1A1C2F55F200807813 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E76BBA1C1C2F55F200807813 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E76BBA1F1C2F55F200807813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E76BBA211C2F55F200807813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E76BBA241C2F55F200807813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E76BBA261C2F55F200807813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BBA2B1C2F55F200807813 /* WigitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WigitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BBA2F1C2F55F200807813 /* WigitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WigitTests.swift; sourceTree = "<group>"; };
+		E76BBA311C2F55F200807813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BBA361C2F55F200807813 /* WigitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WigitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BBA3A1C2F55F200807813 /* WigitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WigitUITests.swift; sourceTree = "<group>"; };
+		E76BBA3C1C2F55F200807813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E76BBA121C2F55F200807813 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA281C2F55F200807813 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA331C2F55F200807813 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E76BBA0C1C2F55F200807813 = {
+			isa = PBXGroup;
+			children = (
+				E76BBA171C2F55F200807813 /* Wigit */,
+				E76BBA2E1C2F55F200807813 /* WigitTests */,
+				E76BBA391C2F55F200807813 /* WigitUITests */,
+				E76BBA161C2F55F200807813 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E76BBA161C2F55F200807813 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E76BBA151C2F55F200807813 /* Wigit.app */,
+				E76BBA2B1C2F55F200807813 /* WigitTests.xctest */,
+				E76BBA361C2F55F200807813 /* WigitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E76BBA171C2F55F200807813 /* Wigit */ = {
+			isa = PBXGroup;
+			children = (
+				E76BBA181C2F55F200807813 /* AppDelegate.swift */,
+				E76BBA1A1C2F55F200807813 /* FirstViewController.swift */,
+				E76BBA1C1C2F55F200807813 /* SecondViewController.swift */,
+				E76BBA1E1C2F55F200807813 /* Main.storyboard */,
+				E76BBA211C2F55F200807813 /* Assets.xcassets */,
+				E76BBA231C2F55F200807813 /* LaunchScreen.storyboard */,
+				E76BBA261C2F55F200807813 /* Info.plist */,
+			);
+			path = Wigit;
+			sourceTree = "<group>";
+		};
+		E76BBA2E1C2F55F200807813 /* WigitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E76BBA2F1C2F55F200807813 /* WigitTests.swift */,
+				E76BBA311C2F55F200807813 /* Info.plist */,
+			);
+			path = WigitTests;
+			sourceTree = "<group>";
+		};
+		E76BBA391C2F55F200807813 /* WigitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E76BBA3A1C2F55F200807813 /* WigitUITests.swift */,
+				E76BBA3C1C2F55F200807813 /* Info.plist */,
+			);
+			path = WigitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E76BBA141C2F55F200807813 /* Wigit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BBA3F1C2F55F300807813 /* Build configuration list for PBXNativeTarget "Wigit" */;
+			buildPhases = (
+				E76BBA111C2F55F200807813 /* Sources */,
+				E76BBA121C2F55F200807813 /* Frameworks */,
+				E76BBA131C2F55F200807813 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wigit;
+			productName = Wigit;
+			productReference = E76BBA151C2F55F200807813 /* Wigit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E76BBA2A1C2F55F200807813 /* WigitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BBA421C2F55F300807813 /* Build configuration list for PBXNativeTarget "WigitTests" */;
+			buildPhases = (
+				E76BBA271C2F55F200807813 /* Sources */,
+				E76BBA281C2F55F200807813 /* Frameworks */,
+				E76BBA291C2F55F200807813 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E76BBA2D1C2F55F200807813 /* PBXTargetDependency */,
+			);
+			name = WigitTests;
+			productName = WigitTests;
+			productReference = E76BBA2B1C2F55F200807813 /* WigitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E76BBA351C2F55F200807813 /* WigitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BBA451C2F55F300807813 /* Build configuration list for PBXNativeTarget "WigitUITests" */;
+			buildPhases = (
+				E76BBA321C2F55F200807813 /* Sources */,
+				E76BBA331C2F55F200807813 /* Frameworks */,
+				E76BBA341C2F55F200807813 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E76BBA381C2F55F200807813 /* PBXTargetDependency */,
+			);
+			name = WigitUITests;
+			productName = WigitUITests;
+			productReference = E76BBA361C2F55F200807813 /* WigitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E76BBA0D1C2F55F200807813 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Wigit, inc";
+				TargetAttributes = {
+					E76BBA141C2F55F200807813 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					E76BBA2A1C2F55F200807813 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E76BBA141C2F55F200807813;
+					};
+					E76BBA351C2F55F200807813 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E76BBA141C2F55F200807813;
+					};
+				};
+			};
+			buildConfigurationList = E76BBA101C2F55F200807813 /* Build configuration list for PBXProject "Wigit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E76BBA0C1C2F55F200807813;
+			productRefGroup = E76BBA161C2F55F200807813 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E76BBA141C2F55F200807813 /* Wigit */,
+				E76BBA2A1C2F55F200807813 /* WigitTests */,
+				E76BBA351C2F55F200807813 /* WigitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E76BBA131C2F55F200807813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BBA251C2F55F200807813 /* LaunchScreen.storyboard in Resources */,
+				E76BBA221C2F55F200807813 /* Assets.xcassets in Resources */,
+				E76BBA201C2F55F200807813 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA291C2F55F200807813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA341C2F55F200807813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E76BBA111C2F55F200807813 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BBA1D1C2F55F200807813 /* SecondViewController.swift in Sources */,
+				E76BBA191C2F55F200807813 /* AppDelegate.swift in Sources */,
+				E76BBA1B1C2F55F200807813 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA271C2F55F200807813 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BBA301C2F55F200807813 /* WigitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BBA321C2F55F200807813 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BBA3B1C2F55F200807813 /* WigitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E76BBA2D1C2F55F200807813 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76BBA141C2F55F200807813 /* Wigit */;
+			targetProxy = E76BBA2C1C2F55F200807813 /* PBXContainerItemProxy */;
+		};
+		E76BBA381C2F55F200807813 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76BBA141C2F55F200807813 /* Wigit */;
+			targetProxy = E76BBA371C2F55F200807813 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E76BBA1E1C2F55F200807813 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76BBA1F1C2F55F200807813 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E76BBA231C2F55F200807813 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76BBA241C2F55F200807813 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E76BBA3D1C2F55F300807813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E76BBA3E1C2F55F300807813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E76BBA401C2F55F300807813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Wigit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.Wigit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E76BBA411C2F55F300807813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Wigit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.Wigit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E76BBA431C2F55F300807813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WigitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.WigitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wigit.app/Wigit";
+			};
+			name = Debug;
+		};
+		E76BBA441C2F55F300807813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WigitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.WigitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wigit.app/Wigit";
+			};
+			name = Release;
+		};
+		E76BBA461C2F55F300807813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WigitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.WigitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Wigit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E76BBA471C2F55F300807813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WigitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Wigit.WigitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Wigit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E76BBA101C2F55F200807813 /* Build configuration list for PBXProject "Wigit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BBA3D1C2F55F300807813 /* Debug */,
+				E76BBA3E1C2F55F300807813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76BBA3F1C2F55F300807813 /* Build configuration list for PBXNativeTarget "Wigit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BBA401C2F55F300807813 /* Debug */,
+				E76BBA411C2F55F300807813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E76BBA421C2F55F300807813 /* Build configuration list for PBXNativeTarget "WigitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BBA431C2F55F300807813 /* Debug */,
+				E76BBA441C2F55F300807813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E76BBA451C2F55F300807813 /* Build configuration list for PBXNativeTarget "WigitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BBA461C2F55F300807813 /* Debug */,
+				E76BBA471C2F55F300807813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E76BBA0D1C2F55F200807813 /* Project object */;
+}
