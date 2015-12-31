@@ -46,6 +46,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LYI-Ab-8cz"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95D-e5-Npf">
                                 <rect key="frame" x="209" y="163" width="182" height="30"/>
@@ -69,6 +72,11 @@
                             <constraint firstItem="weZ-cZ-xM3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="zeV-TF-ebD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="AxR-dM-hJH" id="4Sv-6N-sKb"/>
+                        <outlet property="password" destination="rLb-aL-4As" id="k8W-ue-Po9"/>
+                        <outlet property="username" destination="95D-e5-Npf" id="6yd-YF-aCa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
