@@ -12,6 +12,18 @@ import Parse
 
 class ViewController: UIViewController {
 
+
+    
+    @IBOutlet var loginButton: UIButton!
+    @IBAction func login(sender: AnyObject) {
+        if username.text == "" || password.text == "" {
+            let alert = UIAlertController(title: "Oops!", message: "Username and password are required.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
