@@ -16,16 +16,18 @@ class ViewController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var loginButton: UIButton!
+    
+    func displayAlert(var title:String, var message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     @IBAction func login(sender: AnyObject) {
         if username.text == "" || password.text == "" {
-            let alert = UIAlertController(title: "You fucked up!", message: "Username and password are required.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayAlert("You fucked up!", message: "Username and password are required.")
         }
         if username.text != "wyu13" {
-            let alert = UIAlertController(title: "User not detected!", message: "Please fuck off.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayAlert("User not detected!", message: "Please fuck off.")
         }
     }
     override func viewDidLoad() {
