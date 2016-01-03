@@ -159,7 +159,7 @@ NS_REQUIRES_PROPERTY_DEFINITIONS
 
  @see -objectForKey:
  */
-- (nullable id)objectForKeyedSubscript:(NSString *)key;
+- (id)objectForKeyedSubscript:(NSString *)key;
 
 /**
  Returns the value associated with a given key.

@@ -9,6 +9,7 @@
 
 import UIKit
 import Parse
+import Bolts
 
 class ViewController: UIViewController {
 
@@ -21,11 +22,20 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
+        if username.text != "wyu13" {
+            let alert = UIAlertController(title: "User not detected!", message: "Please fuck off.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
