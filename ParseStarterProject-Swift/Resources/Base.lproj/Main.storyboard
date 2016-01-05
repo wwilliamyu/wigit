@@ -525,7 +525,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Rental Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Te-QF-Oqa">
-                                <rect key="frame" x="20" y="177" width="114" height="17.5"/>
+                                <rect key="frame" x="20" y="177" width="114" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="USv-xC-1Jl"/>
                                     <constraint firstAttribute="height" constant="17.5" id="nQs-Am-Gun"/>
