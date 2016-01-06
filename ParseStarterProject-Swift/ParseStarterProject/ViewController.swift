@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var signupButton: UIButton!
     
+    @IBOutlet var rememberSwitch: UISwitch!
     func displayAlert(var title:String, var message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
@@ -30,6 +32,13 @@ class ViewController: UIViewController {
             displayAlert("User not detected!", message: "Please fuck off.")
         }
     }
+    @IBAction func signup(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func `switch`(sender: AnyObject) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
