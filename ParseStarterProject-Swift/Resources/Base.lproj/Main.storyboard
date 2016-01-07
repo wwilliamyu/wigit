@@ -9,7 +9,7 @@
         <!--Signup-->
         <scene sceneID="XJA-hK-q20">
             <objects>
-                <viewController storyboardIdentifier="Nigg" title="Signup" id="Q9z-IM-LQp" sceneMemberID="viewController">
+                <viewController title="Signup" id="Q9z-IM-LQp" customClass="Signup" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhb-34-40x"/>
                         <viewControllerLayoutGuide type="bottom" id="Rek-Z6-Qeb"/>
@@ -63,8 +63,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiC-vm-9Qt">
-                                <rect key="frame" x="276" y="310" width="49" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKq-9r-pSw">
+                                <rect key="frame" x="210" y="288" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xZM-t1-1Pc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiC-vm-9Qt">
+                                <rect key="frame" x="276" y="329" width="49" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="H7Z-pu-ThR"/>
@@ -76,6 +84,8 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kMf-7H-waV"/>
+                                    <action selector="signup:" destination="Q9z-IM-LQp" eventType="touchUpInside" id="8WA-mm-PcP"/>
+                                    <action selector="signupButton:" destination="Q9z-IM-LQp" eventType="touchUpInside" id="U0p-S9-9va"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="rvX-pM-4JE"/>
                                 </connections>
                             </button>
@@ -97,10 +107,19 @@
                             <constraint firstItem="gLy-WL-1GL" firstAttribute="top" secondItem="KIh-bC-sjy" secondAttribute="bottom" constant="8" id="uH2-Xh-Mu1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="aKq-9r-pSw" id="GDz-EF-Rge"/>
+                        <outlet property="firstname" destination="KIh-bC-sjy" id="Jmj-UA-7PB"/>
+                        <outlet property="lastname" destination="gLy-WL-1GL" id="DbF-mZ-nrA"/>
+                        <outlet property="password" destination="Y0Q-wY-F66" id="83k-nl-WFy"/>
+                        <outlet property="phone" destination="gHC-XS-8z3" id="2Fn-0m-Qc8"/>
+                        <outlet property="signupButton" destination="uiC-vm-9Qt" id="yBM-rm-0F7"/>
+                        <outlet property="username" destination="Ewz-b8-SKb" id="O5h-w6-AJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1o-P6-uRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1627" y="1189"/>
+            <point key="canvasLocation" x="-1633" y="1191"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1305,6 +1324,7 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" red="0.1411764771" green="0.81568634510000004" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1749,10 +1769,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4O7-Ov-pPW"/>
-        <segue reference="D8E-fM-MC1"/>
-        <segue reference="ebr-Eq-owu"/>
-        <segue reference="c4f-QH-U8x"/>
         <segue reference="Hbr-kL-82D"/>
+        <segue reference="c4f-QH-U8x"/>
+        <segue reference="D8E-fM-MC1"/>
+        <segue reference="rvX-pM-4JE"/>
+        <segue reference="ebr-Eq-owu"/>
     </inferredMetricsTieBreakers>
 </document>

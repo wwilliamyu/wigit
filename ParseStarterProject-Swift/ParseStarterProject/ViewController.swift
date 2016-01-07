@@ -32,7 +32,19 @@ class ViewController: UIViewController {
         if username.text != "wyu13" {
             displayAlert("User not detected!", message: "Please fuck off.")
         }
+        
+        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                // The login failed. Check error to see why.
+                
+            }
+        }
+
     }
+    
     @IBAction func signup(sender: AnyObject) {
         
     }
@@ -43,11 +55,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Object has been saved.")
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
