@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var signupButton: UIButton!
     
     @IBOutlet var rememberSwitch: UISwitch!
+    @IBOutlet weak var login: UIButton!
     func displayAlert(var title:String, var message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
