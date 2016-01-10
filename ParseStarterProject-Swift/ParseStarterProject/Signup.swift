@@ -13,16 +13,31 @@ import Bolts
 
 class Signup: UIViewController {
     
+    func displayAlert(var title:String, var message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var firstname: UITextField!
     @IBOutlet var lastname: UITextField!
     @IBOutlet var phone: UITextField!
-    
     @IBOutlet var email: UITextField!
+    
     @IBOutlet var signupButton: UIButton!
     
     @IBAction func signup(sender: AnyObject) {
+        if username.text == ""
+            || password.text == ""
+            || firstname.text == ""
+            || lastname.text == ""
+            || phone.text == ""
+            || email.text == "" {
+            
+            displayAlert("Error!", message: "Please fill out all fields.")
+        }
         var user = PFUser()
         user.username = username.text
         user.password = password.text
@@ -36,7 +51,7 @@ class Signup: UIViewController {
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
-                let errorString = error.userInfo?["BRO, NOT COOL."] as? NSString
+                let errorString = error.userInfo?["error"] as? NSString
                 // Show the errorString somewhere and let the user try again.
             } else {
                 // Hooray! Let them use the app now.
