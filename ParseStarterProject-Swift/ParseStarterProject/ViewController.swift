@@ -21,9 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet var rememberSwitch: UISwitch!
     @IBOutlet weak var login: UIButton!
     func displayAlert(var title:String, var message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: "Okay")
+        alert.show()
     }
     @IBAction func login(sender: AnyObject) {
         if username.text == "" || password.text == "" {
@@ -33,13 +32,12 @@ class ViewController: UIViewController {
             displayAlert("User not detected!", message: "Please fuck off.")
         }
         
-        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+        PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // Do stuff after successful login.
             } else {
-                // The login failed. Check error to see why.
-                
+                self.displayAlert("COME ON, NIGGA", message: "Invalid login credentials.")
             }
         }
 

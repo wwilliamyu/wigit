@@ -13,12 +13,6 @@ import Bolts
 
 class Signup: UIViewController {
     
-    func displayAlert(var title:String, var message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var firstname: UITextField!
@@ -28,36 +22,40 @@ class Signup: UIViewController {
     
     @IBOutlet var signupButton: UIButton!
     
-    @IBAction func signup(sender: AnyObject) {
-        if username.text == ""
-            || password.text == ""
-            || firstname.text == ""
-            || lastname.text == ""
-            || phone.text == ""
-            || email.text == "" {
-            
-            displayAlert("Error!", message: "Please fill out all fields.")
-        }
-        var user = PFUser()
-        user.username = username.text
-        user.password = password.text
-        user["firstname"] = firstname.text
-        user["lastname"] = lastname.text
-        user["phone"] = phone.text
-        user.email = email.text
-        // other fields can be set just like with PFObject
-        //user["phone"] = "415-392-0202"
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                // Show the errorString somewhere and let the user try again.
-            } else {
-                // Hooray! Let them use the app now.
-            }
-        }
+    func displayAlert(var title:String, var message:String) {
+        let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "Okay")
+        alert.show()
+    }
     
+    @IBAction func signup(sender: AnyObject) {
+        if username.text == "" || password.text == "" || firstname.text == "" || lastname.text == "" || phone.text == "" || email.text == "" {
+            print("John Cena")
+            displayAlert("Error!", message: "Please fill out all fields.")
+            
+        }
+        else {
+            var user = PFUser()
+            user.username = username.text
+            user.password = password.text
+            user["firstname"] = firstname.text
+            user["lastname"] = lastname.text
+            user["phone"] = phone.text
+            user.email = email.text
+            // other fields can be set just like with PFObject
+            //user["phone"] = "415-392-0202"
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? NSString
+                    // Show the errorString somewhere and let the user try again.
+                } else {
+                    // Hooray! Let them use the app now.
+                }
+            }
+
+        }
+
     }
     
     override func viewDidLoad() {
