@@ -22,15 +22,17 @@ class Signup: UIViewController {
     
     @IBOutlet var signupButton: UIButton!
     
-    func displayAlert(var title:String, var message:String) {
-        let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "Okay")
-        alert.show()
+    func displayAlert(var title:String, var message:String, var action:String, var view:UIViewController)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.Default, handler: nil))
+        view.presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func signup(sender: AnyObject) {
         if username.text == "" || password.text == "" || firstname.text == "" || lastname.text == "" || phone.text == "" || email.text == "" {
-            print("John Cena")
-            displayAlert("Error!", message: "Please fill out all fields.")
+            displayAlert("Error!", message: "Please fill out all fields.", action: "Okay.", view: Signup())
             
         }
         else {
@@ -49,8 +51,10 @@ class Signup: UIViewController {
                 if let error = error {
                     let errorString = error.userInfo?["error"] as? NSString
                     // Show the errorString somewhere and let the user try again.
+                    self.displayAlert("Error", message: "BIIIG PROBLEMO", action: "Sorry, my bad.", view: Signup())
                 } else {
                     // Hooray! Let them use the app now.
+                    self.displayAlert("Congratulations!", message: "You have signed up!", action: "Continue.", view: Signup())
                 }
             }
 

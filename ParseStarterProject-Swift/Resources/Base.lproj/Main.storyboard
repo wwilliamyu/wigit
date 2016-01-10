@@ -141,7 +141,7 @@
                                     <constraint firstAttribute="width" constant="182" id="D3g-IS-NcT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxR-dM-hJH">
                                 <rect key="frame" x="272" y="291" width="56" height="30"/>
@@ -157,7 +157,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTK-so-cMb"/>
-                                    <segue destination="2Cz-AP-eFW" kind="show" id="E5f-P9-YY9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95D-e5-Npf">
@@ -341,6 +340,7 @@
                         <outlet property="rememberSwitch" destination="p25-5s-k5U" id="FRp-TH-Ukd"/>
                         <outlet property="signupButton" destination="7fH-Oh-1wd" id="msJ-qJ-ngm"/>
                         <outlet property="username" destination="95D-e5-Npf" id="6yd-YF-aCa"/>
+                        <segue destination="2Cz-AP-eFW" kind="show" identifier="Logon" id="IHs-LW-KWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1779,8 +1779,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rvX-pM-4JE"/>
-        <segue reference="E5f-P9-YY9"/>
+        <segue reference="4O7-Ov-pPW"/>
+        <segue reference="IHs-LW-KWx"/>
         <segue reference="nUQ-em-xsz"/>
         <segue reference="rfH-9o-gjw"/>
     </inferredMetricsTieBreakers>
