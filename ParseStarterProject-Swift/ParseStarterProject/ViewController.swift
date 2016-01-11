@@ -20,15 +20,14 @@ class ViewController: UIViewController {
     
     @IBOutlet var rememberSwitch: UISwitch!
     @IBOutlet weak var login: UIButton!
-    func displayAlert(var title:String, var message:String, var action:String, var view:UIViewController) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.Default, handler: nil))
-        view.presentViewController(alert, animated: true, completion: nil)
+    func displayAlert(var title:String, var message:String, var action:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     @IBAction func login(sender: AnyObject) {
         if username.text == "" || password.text == "" {
-            self.performSegueWithIdentifier("Logon", sender: sender)
-            displayAlert("You fucked up!", message: "Username and password are required.", action: "Okay.", view: ViewController())
+            displayAlert("You fucked up!", message: "Username and password are required.", action: "Okay.")
         }
         
         PFUser.logInWithUsernameInBackground(username.text, password: password.text) {
@@ -37,7 +36,7 @@ class ViewController: UIViewController {
                 // do this if good login
                 self.performSegueWithIdentifier("Logon", sender: sender)
             } else {
-                self.displayAlert("Come on, nigga.", message: "Invalid login credentials.", action: "Try again.", view: ViewController())
+                self.displayAlert("Come on, nigga.", message: "Invalid login credentials.", action: "Try again.")
             }
         }
 

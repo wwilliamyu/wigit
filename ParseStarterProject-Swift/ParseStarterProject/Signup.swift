@@ -21,19 +21,38 @@ class Signup: UIViewController {
     @IBOutlet var email: UITextField!
     
     @IBOutlet var signupButton: UIButton!
-    
-    func displayAlert(var title:String, var message:String, var action:String, var view:UIViewController)
+
+
+    func displayAlert(var title:String, var message:String, var action:String)
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.Default, handler: nil))
-        view.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: action, style: .Default, handler: nil)
+//        { (action:UIAlertAction!) in
+//            println("you have pressed OK button");
+//        }
+        alert.addAction(OKAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+
         
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func signup(sender: AnyObject) {
         if username.text == "" || password.text == "" || firstname.text == "" || lastname.text == "" || phone.text == "" || email.text == "" {
-            displayAlert("Error!", message: "Please fill out all fields.", action: "Okay.", view: Signup())
             
+            self.displayAlert("Error!", message: "Please fill in all fields.", action: "Yes, sir!")
+        
         }
         else {
             var user = PFUser()
@@ -51,25 +70,20 @@ class Signup: UIViewController {
                 if let error = error {
                     let errorString = error.userInfo?["error"] as? NSString
                     // Show the errorString somewhere and let the user try again.
-                    self.displayAlert("Error", message: "BIIIG PROBLEMO", action: "Sorry, my bad.", view: Signup())
+                    self.displayAlert("Error", message: "BIIIG PROBLEMO", action: "Sorry, my bad.")
+                    
                 } else {
                     // Hooray! Let them use the app now.
-                    self.displayAlert("Congratulations!", message: "You have signed up!", action: "Continue.", view: Signup())
+                    self.displayAlert("Congratulations!", message: "You have signed up!", action: "Continue.")
+                    self.performSegueWithIdentifier("DoneSignup", sender: sender)
+                    
                 }
             }
-
+            
+            
+            
         }
-
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 }
