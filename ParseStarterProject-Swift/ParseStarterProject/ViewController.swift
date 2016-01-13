@@ -34,7 +34,18 @@ class ViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // do this if good login
-                self.performSegueWithIdentifier("Logon", sender: sender)
+                
+                // do CHECK IF TERMS AND CONDITIONS HAVE BEEN ACCEPTED BEFORE
+                var currentUser = PFUser.currentUser()
+                var ACCEPTED = (currentUser!["acceptTAC"] as! Bool)
+                
+                if ACCEPTED {
+                    self.performSegueWithIdentifier("Logon", sender: sender)
+                }
+                else {
+                    self.performSegueWithIdentifier("TermsAndConditions", sender: sender)
+                }
+                
             } else {
                 self.displayAlert("Come on, nigga.", message: "Invalid login credentials.", action: "Try again.")
             }

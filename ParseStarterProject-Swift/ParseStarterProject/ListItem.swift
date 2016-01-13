@@ -43,10 +43,6 @@ class ListItem: UIViewController {
         
     }
     
-    func trollPrint() {
-        print("JOHN CENA")
-    }
-    
     @IBAction func listItem(sender: AnyObject) {
         if itemName.text == "" || itemPrice.text == "" || itemCategory.text == "" || returnMonth.text == "" || returnDay.text == "" || returnYear.text == "" || pickupLocation == "" {
             
@@ -59,12 +55,12 @@ class ListItem: UIViewController {
             rentedItem["name"] = itemName.text
             
             if priceSwitch.on {
-                rentedItem["rental_price_onetime"] = itemPrice.text
+                rentedItem["rental_price_onetime"] = itemPrice.text.toInt()!
                 rentedItem["rental_price_daily"] = 0
             }
             else {
                 rentedItem["rental_price_onetime"] = 0
-                rentedItem["rental_price_daily"] = itemPrice.text
+                rentedItem["rental_price_daily"] = itemPrice.text.toInt()!
             }
             
             rentedItem["category"] = itemCategory.text
@@ -98,8 +94,15 @@ class ListItem: UIViewController {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // The object has been saved.
-                    self.displayAlert("Congratulations!", message: "You have listed an item!", action: "Continue")
-                    self.performSegueWithIdentifier("ConfirmListing", sender: sender)
+                    func confirmedListing(alert: UIAlertAction!) {
+                        self.performSegueWithIdentifier("ListedItem", sender: sender)
+                    }
+                    
+                    let alert = UIAlertController(title: "Congratulations", message: "You have listed an item!", preferredStyle: .Alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: confirmedListing))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
                     
                 } else {
                     // There was a problem, check error.description
@@ -109,12 +112,12 @@ class ListItem: UIViewController {
         }
         
         let alert = UIAlertController(title: "Confirmation", message: "Are you sure these details are correct?", preferredStyle: .Alert)
+    
+        
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: saveItem))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
 
-        
-    
     }
     
     
@@ -122,6 +125,7 @@ class ListItem: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        itemDetails.layer.cornerRadius = 5
         
     }
     

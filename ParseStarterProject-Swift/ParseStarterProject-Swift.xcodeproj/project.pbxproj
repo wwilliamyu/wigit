@@ -21,6 +21,7 @@
 		E9B35B701C43693300D61878 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B6F1C43693300D61878 /* Home.swift */; };
 		E9B35B721C436E2000D61878 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B711C436E2000D61878 /* ListItem.swift */; };
 		E9B35B761C43747000D61878 /* troll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9B35B751C43747000D61878 /* troll.jpg */; };
+		E9B35B781C4626EF00D61878 /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E9B35B6F1C43693300D61878 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E9B35B711C436E2000D61878 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		E9B35B751C43747000D61878 /* troll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = troll.jpg; path = ../../../../troll.jpg; sourceTree = "<group>"; };
+		E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				E9B35B6F1C43693300D61878 /* Home.swift */,
 				E9B35B711C436E2000D61878 /* ListItem.swift */,
+				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				E9B35B721C436E2000D61878 /* ListItem.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				E9B35B781C4626EF00D61878 /* TermsAndConditions.swift in Sources */,
 				E9B35B701C43693300D61878 /* Home.swift in Sources */,
 				E9837C0F1C3E12E400ACDC02 /* Signup.swift in Sources */,
 			);
