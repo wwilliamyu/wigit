@@ -75,8 +75,16 @@ class Signup: UIViewController {
                     
                 } else {
                     // Hooray! Let them use the app now.
-                    self.displayAlert("Congratulations!", message: "You have signed up!", action: "Continue.")
-                    self.performSegueWithIdentifier("DoneSignup", sender: sender)
+                    
+                    func finishSignup(alert: UIAlertAction!) {
+                        self.performSegueWithIdentifier("DoneSignup", sender: sender)
+                    }
+                    
+                    let alert = UIAlertController(title: "Congratulations!", message: "You have signed up!", preferredStyle: .Alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: finishSignup))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                
                     
                 }
             }

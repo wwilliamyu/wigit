@@ -75,7 +75,16 @@ class ListItem: UIViewController {
             // ===========================================
             
             var currentUser = PFUser.currentUser()
-            rentedItem["owner"] = (currentUser!["username"] as! String)
+            if currentUser != nil {
+                // Do stuff with the user
+                
+                rentedItem["owner"] = (currentUser!["username"] as! String)
+                
+            } else {
+                // Show the signup or login screen
+                print("There is a problem with currentUser in ListItem.swift")
+            }
+
             
             rentedItem["pickup_location"] = pickupLocation.text
             

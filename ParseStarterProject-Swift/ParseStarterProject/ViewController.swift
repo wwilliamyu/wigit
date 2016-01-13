@@ -37,6 +37,7 @@ class ViewController: UIViewController {
                 
                 // do CHECK IF TERMS AND CONDITIONS HAVE BEEN ACCEPTED BEFORE
                 var currentUser = PFUser.currentUser()
+        
                 var ACCEPTED = (currentUser!["acceptTAC"] as! Bool)
                 
                 if ACCEPTED {
