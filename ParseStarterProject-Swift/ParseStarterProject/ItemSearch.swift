@@ -35,10 +35,6 @@ class ItemSearch: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        var searchItem = PFObject()
-        searchItem["name"] = itemName.text
-        searchItem["category"] = itemCategory.text
-        
         self.performSegueWithIdentifier("SearchItem", sender: sender)
     }
     
