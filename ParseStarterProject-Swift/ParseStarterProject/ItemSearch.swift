@@ -13,10 +13,48 @@ import Bolts
 
 class ItemSearch: UIViewController {
     
+    @IBOutlet var itemName: UITextField!
+    
+    // ============== OPTIONAL ===============================
+    
+    @IBOutlet var itemCategory: UITextField!
+    @IBOutlet var itemTags: UITextField!
+    @IBOutlet var itemRentalTime: UITextField!
+    @IBOutlet var itemMinPrice: UITextField!
+    @IBOutlet var itemMaxPrice: UITextField!
+    @IBOutlet var priceSwitch: UISwitch!
+    
+    // =======================================================
+    
+    @IBAction func searchItemButton(sender: AnyObject) {
+        
+        if itemName.text == "" && itemCategory.text == "" {
+            let alert = UIAlertController(title: "The fuck, man?!", message: "Fill in the motherfuckin fields!", preferredStyle: .Alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes, master", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        var searchItem = PFObject()
+        searchItem["name"] = itemName.text
+        searchItem["category"] = itemCategory.text
+        
+        self.performSegueWithIdentifier("SearchItem", sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "SearchItem") {
+            //Checking identifier is crucial as there might be multiple
+            // segues attached to same view
+            var itemNameController = segue.destinationViewController as! ItemName
+            itemNameController.passedString = "JOHN CENA"
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     override func didReceiveMemoryWarning() {

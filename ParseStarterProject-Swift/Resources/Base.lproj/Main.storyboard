@@ -396,14 +396,14 @@
                                                 <animations/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <segue destination="2RQ-fv-4Gf" kind="show" id="D8E-fM-MC1"/>
+                                                    <segue destination="2Cz-AP-eFW" kind="show" id="etu-2B-gr6"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qY1-qd-ktS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="or fill this in only" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qY1-qd-ktS">
                                 <rect key="frame" x="103" y="90" width="481" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -413,10 +413,10 @@
                                 <rect key="frame" x="16" y="98" width="79" height="21.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.75294125080108643" green="0.91372555494308472" blue="0.93725496530532837" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Holographic Charizard Card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oob-M8-hGT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fill this in and/or Categories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oob-M8-hGT">
                                 <rect key="frame" x="77" y="52" width="507" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -462,12 +462,6 @@
                                 <color key="textColor" red="0.75294125080108643" green="0.91372555494308472" blue="0.93725496530532837" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-4b-eBi">
-                                <rect key="frame" x="129.5" y="166" width="454.5" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it2-sB-HnT">
                                 <rect key="frame" x="230" y="284" width="37.5" height="20.5"/>
                                 <animations/>
@@ -503,7 +497,16 @@
                                 <state key="normal" title="Search!">
                                     <color key="titleColor" red="0.30980392156862746" green="1" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchItemButton:" destination="rmb-Gc-BXh" eventType="touchUpInside" id="EQ1-gR-K4h"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-4b-eBi">
+                                <rect key="frame" x="129" y="166" width="454.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.1764705882" green="0.7725490196" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -553,6 +556,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item Search" id="E4O-Pc-b0E"/>
+                    <connections>
+                        <outlet property="itemCategory" destination="qY1-qd-ktS" id="Gmh-C4-dVM"/>
+                        <outlet property="itemMaxPrice" destination="WBF-Au-0Uq" id="Et3-qw-BX8"/>
+                        <outlet property="itemMinPrice" destination="h9Q-L5-MTY" id="cek-mH-xLP"/>
+                        <outlet property="itemName" destination="oob-M8-hGT" id="9LK-ND-5tx"/>
+                        <outlet property="itemRentalTime" destination="5Fu-4b-eBi" id="12n-rD-niy"/>
+                        <outlet property="itemTags" destination="2vM-hm-lJd" id="PYB-pM-3xi"/>
+                        <outlet property="priceSwitch" destination="Kw3-rk-yWy" id="8PC-M0-owU"/>
+                        <segue destination="2RQ-fv-4Gf" kind="show" identifier="SearchItem" id="hov-8l-9Gt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQN-uL-ub7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1376,7 +1389,7 @@
         <!--Item Name-->
         <scene sceneID="jir-IV-AfS">
             <objects>
-                <viewController title="Item Name" id="2RQ-fv-4Gf" sceneMemberID="viewController">
+                <viewController title="Item Name" id="2RQ-fv-4Gf" customClass="ItemName" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r1U-Re-VxU"/>
                         <viewControllerLayoutGuide type="bottom" id="Oly-fB-RWm"/>
@@ -1635,8 +1648,8 @@
         <image name="troll.jpg" width="605" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nv1-Hf-zze"/>
-        <segue reference="zo5-Ml-HbR"/>
-        <segue reference="D8E-fM-MC1"/>
+        <segue reference="etu-2B-gr6"/>
+        <segue reference="hov-8l-9Gt"/>
+        <segue reference="4O7-Ov-pPW"/>
     </inferredMetricsTieBreakers>
 </document>

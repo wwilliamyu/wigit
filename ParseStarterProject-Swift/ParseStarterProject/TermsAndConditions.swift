@@ -19,34 +19,22 @@ class TermsAndConditions: UIViewController {
     @IBOutlet var tacView: UIWebView!
     
     @IBAction func acceptTACButton(sender: AnyObject) {
-        
-        var user = PFUser()
-        var currentUser = PFUser.currentUser()
 
-        user.username = currentUser!.username
-        user.password = currentUser!.password
+        var currentUser = PFUser.currentUser()
+      
+        currentUser!["acceptTAC"] = true as Bool
         
-//        if currentUser != nil {
-//            // Do stuff with the user
-//            user.username = currentUser!.username
-//        } else {
-//            // Show the signup or login screen
-//            print("There is a problem with currentUser in TermsAndConditions.swift")
-//        }
-        
-        user["acceptTAC"] = true
-        
-        user.signUpInBackgroundWithBlock {
+        currentUser!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
                 self.performSegueWithIdentifier("DoneTermsAndConditions", sender: sender)
-                
+
             } else {
                 // There was a problem, check error.description
+                print("BOB ROSS' HAPPY LITTLE ACCIDENTS")
             }
         }
-        
     }
     
     @IBAction func declineTACButton(sender: AnyObject) {
