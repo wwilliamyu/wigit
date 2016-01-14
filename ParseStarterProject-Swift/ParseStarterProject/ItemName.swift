@@ -15,11 +15,14 @@ class ItemName: UIViewController {
     
     var passedString: String!
     
+    @IBOutlet var itemSearchBar: UISearchBar!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print(passedString)
-        
+        itemSearchBar.text = passedString
     }
     
     override func didReceiveMemoryWarning() {
