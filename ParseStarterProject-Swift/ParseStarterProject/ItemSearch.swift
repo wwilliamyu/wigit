@@ -44,8 +44,9 @@ class ItemSearch: UIViewController {
             // segues attached to same view
             var itemNameController = segue.destinationViewController as! ItemName
             itemNameController.passedString = "JOHN CENA"
-            itemNameController.passedName = itemName.text
+            
             itemNameController.passedCategory = itemCategory.text
+            itemNameController.passedName = itemName.text
         }
     }
     
