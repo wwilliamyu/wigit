@@ -14,6 +14,8 @@ import Bolts
 class ItemName: UIViewController {
     
     var passedString: String!
+    var passedName: String!
+    var passedCategory: String!
     
     @IBOutlet var itemSearchBar: UISearchBar!
     
