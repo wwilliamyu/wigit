@@ -18,6 +18,7 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		E92DD1421C47957D00548D5B /* ItemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DD1411C47957D00548D5B /* ItemName.swift */; };
+		E955DD411C4B8E5900CAE1BC /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955DD401C4B8E5900CAE1BC /* MyProfile.swift */; };
 		E9837C0F1C3E12E400ACDC02 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9837C0E1C3E12E400ACDC02 /* Signup.swift */; };
 		E9B35B701C43693300D61878 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B6F1C43693300D61878 /* Home.swift */; };
 		E9B35B721C436E2000D61878 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B711C436E2000D61878 /* ListItem.swift */; };
@@ -45,6 +46,7 @@
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		E92DD1411C47957D00548D5B /* ItemName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemName.swift; sourceTree = "<group>"; };
+		E955DD401C4B8E5900CAE1BC /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		E9837C0E1C3E12E400ACDC02 /* Signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		E9B35B6F1C43693300D61878 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E9B35B711C436E2000D61878 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
 				E9B35B7F1C46461F00D61878 /* ItemSearch.swift */,
 				E92DD1411C47957D00548D5B /* ItemName.swift */,
+				E955DD401C4B8E5900CAE1BC /* MyProfile.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B35B721C436E2000D61878 /* ListItem.swift in Sources */,
+				E955DD411C4B8E5900CAE1BC /* MyProfile.swift in Sources */,
 				E92DD1421C47957D00548D5B /* ItemName.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
