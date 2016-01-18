@@ -21,7 +21,31 @@ class MyProfile: UIViewController {
     @IBOutlet var profEmail: UITextField!
     
     @IBOutlet var currPassword: UITextField!
+    
+    var currentUser = PFUser.currentUser()
+    
     @IBAction func submitChangeProfile(sender: AnyObject) {
+        if currPassword.text == "" {
+            let alert = UIAlertController(title: "Error!", message: "Please confirm your password.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        if profUsername.text == "" && profPassword.text == "" && profFirstName.text == "" && profLastName.text == "" && profPhone.text == "" && profEmail.text == "" {
+            
+            let alert = UIAlertController(title: "Error!", message: "You have not changed anything.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        
+        //this part could be security problem?
+        
+        if currPassword.text != currentUser?.password {
+            let alert = UIAlertController(title: "Error!", message: "You have not changed anything.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     
     }
