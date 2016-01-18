@@ -37,19 +37,7 @@ class ItemSearch: UIViewController {
         
         self.performSegueWithIdentifier("SearchItem", sender: sender)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "SearchItem") {
-            //Checking identifier is crucial as there might be multiple
-            // segues attached to same view
-            var itemNameController = segue.destinationViewController as! ItemName
-            itemNameController.passedString = "JOHN CENA"
-            
-            itemNameController.passedCategory = itemCategory.text
-            itemNameController.passedName = itemName.text
-        }
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

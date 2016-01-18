@@ -48,18 +48,36 @@ class MyProfile: UIViewController {
         }
         
         // write modification code
-        currentUser!.username = profUsername.text
-        currentUser!.password = profPassword.text
-        currentUser!["firstname"] = profFirstName.text
-        currentUser!["lastname"] = profLastName.text
-        currentUser!["phone"] = profPhone.text
-        currentUser!.email = profEmail.text
+        if profUsername.text != "" {
+            currentUser!.username = profUsername.text
+        }
+        
+        if profPassword.text != "" {
+            currentUser!.password = profPassword.text
+        }
+    
+        if profFirstName.text != "" {
+            currentUser!["firstname"] = profFirstName.text
+        }
+        
+        if profLastName.text != "" {
+            currentUser!["lastname"] = profLastName.text
+        }
+        
+        if profPhone.text != "" {
+            currentUser!["phone"] = profPhone.text
+        }
+        
+        if profEmail.text != "" {
+            currentUser!.email = profEmail.text
+        }
         
         currentUser!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
-                self.performSegueWithIdentifier("DoneTermsAndConditions", sender: sender)
+                self.displayAlert("Complete", message: "Your profile has been changed.", action: "Okay")
+
                 
             } else {
                 // There was a problem, check error.description
@@ -67,10 +85,12 @@ class MyProfile: UIViewController {
             }
         }
         
-        
-        
-    
     }
+    
+    @IBAction func ProfileLogoff(sender: AnyObject) {
+        PFUser.logOut()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
