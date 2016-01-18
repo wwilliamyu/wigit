@@ -37,15 +37,35 @@ class MyProfile: UIViewController {
             alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        
         //this part could be security problem?
         
         if currPassword.text != currentUser?.password {
-            let alert = UIAlertController(title: "Error!", message: "You have not changed anything.", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Error!", message: "Your password is incorrect.", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        
+        // write modification code
+        currentUser!.username = profUsername.text
+        currentUser!.password = profPassword.text
+        currentUser!["firstname"] = profFirstName.text
+        currentUser!["lastname"] = profLastName.text
+        currentUser!["phone"] = profPhone.text
+        currentUser!.email = profEmail.text
+        
+        currentUser!.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                self.performSegueWithIdentifier("DoneTermsAndConditions", sender: sender)
+                
+            } else {
+                // There was a problem, check error.description
+                print("BOB ROSS' HAPPY LITTLE ACCIDENTS")
+            }
+        }
+        
+        
         
     
     }
