@@ -395,6 +395,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <segue destination="2Cz-AP-eFW" kind="show" id="LRp-Ld-Gyj"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -684,10 +687,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item Search" id="E4O-Pc-b0E"/>
+                    <connections>
+                        <segue destination="QWx-WA-zLR" kind="show" identifier="ItemLookup" id="t4b-KN-GEv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQN-uL-ub7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="729"/>
+            <point key="canvasLocation" x="748" y="709"/>
         </scene>
         <!--Home-->
         <scene sceneID="yd3-mG-Hhn">
@@ -1498,7 +1504,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Item Details" id="TWi-LR-FMg">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="voW-MK-YCu"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="voW-MK-YCu">
+                                            <connections>
+                                                <segue destination="2Cz-AP-eFW" kind="show" id="XSt-Py-ayH"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1647,14 +1657,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBd-T7-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="729"/>
+            <point key="canvasLocation" x="756" y="3"/>
         </scene>
     </scenes>
     <resources>
         <image name="troll.jpg" width="605" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nv1-Hf-zze"/>
+        <segue reference="XSt-Py-ayH"/>
+        <segue reference="t4b-KN-GEv"/>
         <segue reference="ZUA-9f-ij0"/>
     </inferredMetricsTieBreakers>
 </document>
