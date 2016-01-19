@@ -55,6 +55,9 @@ class ListItem: UIViewController {
             rentedItem["name"] = itemName.text
             
             if priceSwitch.on {
+                
+                // check for decimals
+                
                 rentedItem["rental_price_onetime"] = itemPrice.text.toInt()!
                 rentedItem["rental_price_daily"] = 0
             }
