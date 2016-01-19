@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1o-P6-uRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1633" y="1191"/>
+            <point key="canvasLocation" x="-1924" y="729"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -693,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQN-uL-ub7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="709"/>
+            <point key="canvasLocation" x="1476" y="401"/>
         </scene>
         <!--Home-->
         <scene sceneID="yd3-mG-Hhn">
@@ -856,7 +856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTm-Z6-Idl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="1510"/>
+            <point key="canvasLocation" x="682" y="866"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a2e-aW-f7x">
@@ -977,8 +977,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXz-uK-o3t">
-                                <rect key="frame" x="276" y="384" width="49" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Change Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpP-lL-tYo">
+                                <rect key="frame" x="277" y="269" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXz-uK-o3t">
+                                <rect key="frame" x="276" y="397" width="49" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.392156899" green="0.98823535439999999" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
@@ -988,11 +993,6 @@
                                     <action selector="submitChangeProfile:" destination="IG8-aL-5OG" eventType="touchUpInside" id="1Bv-D0-cTj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Change Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpP-lL-tYo">
-                                <rect key="frame" x="277" y="269" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.1411764771" green="0.81568634510000004" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
@@ -1013,6 +1013,7 @@
                             <constraint firstAttribute="centerX" secondItem="a3G-zs-3hm" secondAttribute="centerX" id="Faw-7j-AvQ"/>
                             <constraint firstItem="1K5-22-Fto" firstAttribute="leading" secondItem="Djq-Kf-XZA" secondAttribute="trailing" constant="8" id="Pmd-XW-aEO"/>
                             <constraint firstItem="zVW-A5-ltb" firstAttribute="leading" secondItem="UIA-HY-j1K" secondAttribute="leadingMargin" id="QDH-6i-sp0"/>
+                            <constraint firstAttribute="centerX" secondItem="UXz-uK-o3t" secondAttribute="centerX" id="Rlv-SM-9dw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zVW-A5-ltb" secondAttribute="trailing" id="WuG-zk-f6u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zVW-A5-ltb" secondAttribute="trailing" constant="-16" id="Wut-as-u7y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SpP-lL-tYo" secondAttribute="trailing" id="Ww9-EG-iCo"/>
@@ -1029,6 +1030,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zVW-A5-ltb" secondAttribute="trailing" constant="-20" id="l2Y-DW-cUy"/>
                             <constraint firstAttribute="centerX" secondItem="Q74-ZY-BoO" secondAttribute="centerX" id="mYH-jP-z0X"/>
                             <constraint firstAttribute="centerX" secondItem="gWB-Nn-Wez" secondAttribute="centerX" id="nKx-No-Sqz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1K5-22-Fto" secondAttribute="trailing" id="oK7-B9-Cew"/>
                             <constraint firstItem="SpP-lL-tYo" firstAttribute="top" secondItem="Q74-ZY-BoO" secondAttribute="bottom" constant="8" id="qSo-1U-KvX"/>
                             <constraint firstItem="pub-uS-wuy" firstAttribute="leading" secondItem="UIA-HY-j1K" secondAttribute="leadingMargin" id="rxT-B8-m6H"/>
                             <constraint firstItem="zVW-A5-ltb" firstAttribute="leading" secondItem="UIA-HY-j1K" secondAttribute="leadingMargin" constant="-20" id="sPS-2k-Slg"/>
@@ -1064,7 +1066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qF-HT-ytL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-924" y="1440"/>
+            <point key="canvasLocation" x="-884" y="1648"/>
         </scene>
         <!--List Item-->
         <scene sceneID="8ag-kb-oCu">
@@ -1352,7 +1354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQP-mk-kQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87" y="2308"/>
+            <point key="canvasLocation" x="-59" y="1648"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="ycR-R1-jXf">
@@ -1409,7 +1411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ogo-Rt-p9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-872" y="2308"/>
+            <point key="canvasLocation" x="688" y="1648"/>
         </scene>
         <!--Terms And Conditions-->
         <scene sceneID="2eR-fp-OCP">
@@ -1482,7 +1484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKu-Lz-E49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-931" y="-27"/>
+            <point key="canvasLocation" x="-872" y="-59"/>
         </scene>
         <!--Item Details-->
         <scene sceneID="4M8-P9-QlE">
@@ -1657,7 +1659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBd-T7-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="3"/>
+            <point key="canvasLocation" x="2280" y="415"/>
         </scene>
     </scenes>
     <resources>
@@ -1665,7 +1667,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XSt-Py-ayH"/>
-        <segue reference="t4b-KN-GEv"/>
+        <segue reference="AKg-Ql-bWy"/>
         <segue reference="ZUA-9f-ij0"/>
     </inferredMetricsTieBreakers>
 </document>
