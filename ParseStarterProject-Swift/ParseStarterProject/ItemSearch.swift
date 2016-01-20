@@ -13,32 +13,11 @@ import Bolts
 
 class ItemSearch: UIViewController {
     
-    @IBOutlet var itemName: UITextField!
-    
-    // ============== OPTIONAL ===============================
-    
-    @IBOutlet var itemCategory: UITextField!
-    @IBOutlet var itemTags: UITextField!
-    @IBOutlet var itemRentalTime: UITextField!
-    @IBOutlet var itemMinPrice: UITextField!
-    @IBOutlet var itemMaxPrice: UITextField!
-    @IBOutlet var priceSwitch: UISwitch!
-    
-    // =======================================================
-    
-    @IBAction func searchItemButton(sender: AnyObject) {
-        
-        if itemName.text == "" && itemCategory.text == "" {
-            let alert = UIAlertController(title: "The fuck, man?!", message: "Fill in the motherfuckin fields!", preferredStyle: .Alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes, master", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        self.performSegueWithIdentifier("SearchItem", sender: sender)
-    }
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var itemImage: UIImageView!
+    @IBOutlet var itemName: UILabel!
+    @IBOutlet var itemPrice: UILabel!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

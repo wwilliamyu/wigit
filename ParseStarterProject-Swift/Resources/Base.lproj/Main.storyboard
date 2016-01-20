@@ -249,28 +249,28 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p25-5s-k5U">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p25-5s-k5U">
                                 <rect key="frame" x="276" y="469" width="51" height="31"/>
                                 <animations/>
                                 <connections>
                                     <action selector="switch:" destination="BYZ-38-t0r" eventType="valueChanged" id="vNc-2n-syp"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDx-aL-Tip">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Yes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDx-aL-Tip">
                                 <rect key="frame" x="364" y="476" width="25" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-Hm-Gr2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Remember?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-Hm-Gr2">
                                 <rect key="frame" x="253" y="440" width="94" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzu-VO-MuF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzu-VO-MuF">
                                 <rect key="frame" x="209" y="474" width="23" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -688,12 +688,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item Search" id="E4O-Pc-b0E"/>
                     <connections>
+                        <outlet property="itemImage" destination="Jva-gD-DQc" id="nUo-20-acp"/>
+                        <outlet property="itemName" destination="4wx-4H-QzX" id="X4v-4n-E1b"/>
+                        <outlet property="itemPrice" destination="raN-e5-Zev" id="hZT-Vr-QVC"/>
+                        <outlet property="searchBar" destination="tpH-cM-2HB" id="ihw-Ki-3sU"/>
                         <segue destination="QWx-WA-zLR" kind="show" identifier="ItemLookup" id="t4b-KN-GEv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQN-uL-ub7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="401"/>
+            <point key="canvasLocation" x="1546" y="387"/>
         </scene>
         <!--Home-->
         <scene sceneID="yd3-mG-Hhn">
@@ -1666,8 +1670,8 @@
         <image name="troll.jpg" width="605" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XSt-Py-ayH"/>
-        <segue reference="AKg-Ql-bWy"/>
+        <segue reference="LRp-Ld-Gyj"/>
         <segue reference="ZUA-9f-ij0"/>
+        <segue reference="t4b-KN-GEv"/>
     </inferredMetricsTieBreakers>
 </document>
