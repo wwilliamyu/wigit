@@ -14,9 +14,6 @@ import Bolts
 class ItemSearch: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var itemImage: UIImageView!
-    @IBOutlet var itemName: UILabel!
-    @IBOutlet var itemPrice: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
