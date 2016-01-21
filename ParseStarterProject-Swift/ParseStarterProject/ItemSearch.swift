@@ -12,8 +12,6 @@ import Parse
 import Bolts
 
 class ItemSearch: UIViewController {
-    
-    @IBOutlet var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()

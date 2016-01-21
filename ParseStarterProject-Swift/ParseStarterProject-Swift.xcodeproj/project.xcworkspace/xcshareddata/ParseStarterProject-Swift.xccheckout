@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>028F28F7-F02A-49B2-AE87-B0CAD5298D49</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ParseStarterProject-Swift</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A6D66AB69CB66638B9825950BD89BB7A50F4B932</key>
 		<string>https://github.com/wwilliamyu/wigit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ParseStarterProject-Swift/ParseStarterProject-Swift.xcodeproj</string>
+	<string>ParseStarterProject-Swift/ParseStarterProject-Swift.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A6D66AB69CB66638B9825950BD89BB7A50F4B932</key>
