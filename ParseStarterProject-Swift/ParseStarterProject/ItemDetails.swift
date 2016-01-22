@@ -13,22 +13,10 @@ import Bolts
 
 class ItemDetails: UIViewController {
     
-    @IBOutlet var introduction: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var currentUser = PFUser.currentUser()
-        if currentUser != nil {
-            // Do stuff with the user
-            
-            introduction.text = "Hi, " + (currentUser!["firstname"] as! String)
-            
-        } else {
-            // Show the signup or login screen
-            print("currentUser did not work in Home.swift")
-        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -1241,7 +1241,7 @@
         <!--Item Details-->
         <scene sceneID="4M8-P9-QlE">
             <objects>
-                <viewController title="Item Details" id="QWx-WA-zLR" sceneMemberID="viewController">
+                <viewController title="Item Details" id="QWx-WA-zLR" customClass="ItemDetails" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="110-xS-2kX"/>
                         <viewControllerLayoutGuide type="bottom" id="9rk-hT-kvZ"/>
@@ -1260,7 +1260,7 @@
                                     <navigationItem title="Item Details" id="TWi-LR-FMg">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="voW-MK-YCu">
                                             <connections>
-                                                <segue destination="2Cz-AP-eFW" kind="show" id="XSt-Py-ayH"/>
+                                                <segue destination="2Cz-AP-eFW" kind="show" id="po1-YT-V0J"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1411,15 +1411,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBd-T7-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="415"/>
+            <point key="canvasLocation" x="2460" y="387"/>
         </scene>
     </scenes>
     <resources>
         <image name="troll.jpg" width="605" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LRp-Ld-Gyj"/>
-        <segue reference="t4b-KN-GEv"/>
         <segue reference="ZUA-9f-ij0"/>
+        <segue reference="po1-YT-V0J"/>
+        <segue reference="t4b-KN-GEv"/>
     </inferredMetricsTieBreakers>
 </document>
