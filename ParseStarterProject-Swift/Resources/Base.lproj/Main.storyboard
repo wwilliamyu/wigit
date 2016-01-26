@@ -1347,6 +1347,14 @@
                             <constraint firstItem="rhE-QR-0Xl" firstAttribute="leading" secondItem="7Yg-V8-k9d" secondAttribute="leadingMargin" constant="-20" id="dpq-IN-BfK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayCategory" destination="CVm-uj-77n" id="zQH-RQ-ceZ"/>
+                        <outlet property="displayLocation" destination="5d5-qS-jgc" id="Hrg-Dr-q4i"/>
+                        <outlet property="displayName" destination="cRR-DW-CIJ" id="df6-Ur-yW8"/>
+                        <outlet property="displayPrice" destination="xMH-Kb-5Xj" id="8pJ-Kh-v8R"/>
+                        <outlet property="displayReturnDate" destination="R57-8D-fKB" id="DdQ-Vc-jZ9"/>
+                        <outlet property="displayTags" destination="PRb-Zf-QLv" id="pmL-uy-3x2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBd-T7-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

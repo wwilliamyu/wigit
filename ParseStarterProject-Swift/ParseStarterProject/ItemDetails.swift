@@ -13,6 +13,13 @@ import Bolts
 
 class ItemDetails: UIViewController {
     
+    @IBOutlet var displayName: UILabel!
+    @IBOutlet var displayPrice: UILabel!
+    @IBOutlet var displayTags: UILabel!
+    @IBOutlet var displayCategory: UILabel!
+    @IBOutlet var displayReturnDate: UILabel!
+    @IBOutlet var displayLocation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
