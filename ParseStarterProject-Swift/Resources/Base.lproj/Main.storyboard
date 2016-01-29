@@ -1344,7 +1344,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rent this item!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nga-QB-S7X">
                                 <rect key="frame" x="251" y="521" width="99" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.392156899" green="0.98823535439999999" blue="0.18431372939999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
