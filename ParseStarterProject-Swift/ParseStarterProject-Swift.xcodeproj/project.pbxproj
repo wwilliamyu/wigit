@@ -22,7 +22,6 @@
 		E9837C0F1C3E12E400ACDC02 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9837C0E1C3E12E400ACDC02 /* Signup.swift */; };
 		E9B35B701C43693300D61878 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B6F1C43693300D61878 /* Home.swift */; };
 		E9B35B721C436E2000D61878 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B711C436E2000D61878 /* ListItem.swift */; };
-		E9B35B761C43747000D61878 /* troll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9B35B751C43747000D61878 /* troll.jpg */; };
 		E9B35B781C4626EF00D61878 /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */; };
 		E9B35B7D1C4642DB00D61878 /* mp2_fa15.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */; };
 		E9B35B7E1C4642DB00D61878 /* mp3_fa15.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */; };
@@ -50,7 +49,6 @@
 		E9837C0E1C3E12E400ACDC02 /* Signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		E9B35B6F1C43693300D61878 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E9B35B711C436E2000D61878 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
-		E9B35B751C43747000D61878 /* troll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = troll.jpg; path = ../../../../troll.jpg; sourceTree = "<group>"; };
 		E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 		E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mp2_fa15.pdf; sourceTree = "<group>"; };
 		E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mp3_fa15.pdf; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				814C3AC81B69877600E307BB /* Images.xcassets */,
-				E9B35B751C43747000D61878 /* troll.jpg */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
 			path = Resources;
@@ -207,7 +204,6 @@
 				E9B35B7E1C4642DB00D61878 /* mp3_fa15.pdf in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
-				E9B35B761C43747000D61878 /* troll.jpg in Resources */,
 				E9B35B7D1C4642DB00D61878 /* mp2_fa15.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
