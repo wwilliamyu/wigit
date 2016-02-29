@@ -30,7 +30,7 @@ class ListItem: UIViewController {
     
     @IBOutlet var listItemButton: UIButton!
     
-    func displayAlert(var title:String, var message:String, var action:String)
+    func displayAlert(let title:String, let message:String, let action:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: action, style: .Default, handler: nil)
@@ -52,23 +52,23 @@ class ListItem: UIViewController {
         
         func saveItem(alert: UIAlertAction!) {
             var rentedItem = PFObject(className:"RentedItem")
-            rentedItem["name"] = itemName.text
+            rentedItem["name"] = itemName.text!
             
             if priceSwitch.on {
                 
                 // check for decimals
                 
-                rentedItem["rental_price_onetime"] = itemPrice.text.toInt()!
+                rentedItem["rental_price_onetime"] = Int(itemPrice.text!)!
                 rentedItem["rental_price_daily"] = 0
             }
             else {
                 rentedItem["rental_price_onetime"] = 0
-                rentedItem["rental_price_daily"] = itemPrice.text.toInt()!
+                rentedItem["rental_price_daily"] = Int(itemPrice.text!)!
             }
             
-            rentedItem["category"] = itemCategory.text
+            rentedItem["category"] = itemCategory.text!
             
-            rentedItem["tags"] = itemTags.text // future changes impending!!!
+            rentedItem["tags"] = itemTags.text! // future changes impending!!!
             
             // SET WHEN BUYING!!! ========================
             
@@ -89,7 +89,7 @@ class ListItem: UIViewController {
             }
 
             
-            rentedItem["pickup_location"] = pickupLocation.text
+            rentedItem["pickup_location"] = pickupLocation.text!
             
             
             // SET WHEN BUYING!!! ========================
@@ -98,7 +98,7 @@ class ListItem: UIViewController {
             
             // ===========================================
             
-            rentedItem["return_date"] = returnMonth.text + "-" + returnDay.text + "-" + returnYear.text
+            rentedItem["return_date"] = returnMonth.text! + "-" + returnDay.text! + "-" + returnYear.text!
             rentedItem["item_description"] = itemDetails.text
             
             

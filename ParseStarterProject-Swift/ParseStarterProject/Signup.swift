@@ -58,9 +58,9 @@ class Signup: UIViewController {
             var user = PFUser()
             user.username = username.text
             user.password = password.text
-            user["firstname"] = firstname.text
-            user["lastname"] = lastname.text
-            user["phone"] = phone.text
+            user["firstname"] = firstname.text!
+            user["lastname"] = lastname.text!
+            user["phone"] = phone.text!
             user.email = email.text
             user["acceptTAC"] = false
             // other fields can be set just like with PFObject
@@ -69,7 +69,7 @@ class Signup: UIViewController {
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? NSString
+                    let errorString = error.userInfo["error"] as? NSString
                     // Show the errorString somewhere and let the user try again.
                     self.displayAlert("Error", message: "BIIIG PROBLEMO", action: "Sorry, my bad.")
                     

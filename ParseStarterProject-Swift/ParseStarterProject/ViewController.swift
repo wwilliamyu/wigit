@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var rememberSwitch: UISwitch!
     @IBOutlet weak var login: UIButton!
-    func displayAlert(var title:String, var message:String, var action:String) {
+    func displayAlert(let title:String, let message:String, let action:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
@@ -30,15 +30,15 @@ class ViewController: UIViewController {
             displayAlert("You fucked up!", message: "Username and password are required.", action: "Okay.")
         }
         
-        PFUser.logInWithUsernameInBackground(username.text, password: password.text) {
+        PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // do this if good login
                 
                 // do CHECK IF TERMS AND CONDITIONS HAVE BEEN ACCEPTED BEFORE
-                var currentUser = PFUser.currentUser()
+                let currentUser = PFUser.currentUser()
         
-                var ACCEPTED = (currentUser!["acceptTAC"] as! Bool)
+                let ACCEPTED = (currentUser!["acceptTAC"] as! Bool)
                 
                 if ACCEPTED {
                     self.performSegueWithIdentifier("Logon", sender: sender)

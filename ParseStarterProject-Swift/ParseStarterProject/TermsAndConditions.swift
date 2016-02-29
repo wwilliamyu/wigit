@@ -20,7 +20,7 @@ class TermsAndConditions: UIViewController {
     
     @IBAction func acceptTACButton(sender: AnyObject) {
 
-        var currentUser = PFUser.currentUser()
+        let currentUser = PFUser.currentUser()
       
         currentUser!["acceptTAC"] = true as Bool
         
@@ -42,7 +42,7 @@ class TermsAndConditions: UIViewController {
         PFUser.logOut()
         
         // testing purposes
-        var currentUser = PFUser.currentUser()
+        let currentUser = PFUser.currentUser()
         print(currentUser?.username)
     }
     

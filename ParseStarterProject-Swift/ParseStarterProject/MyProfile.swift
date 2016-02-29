@@ -24,7 +24,7 @@ class MyProfile: UIViewController {
     
     var currentUser = PFUser.currentUser()
     
-    func displayAlert(var title:String, var message:String, var action:String) {
+    func displayAlert(let title:String, let message:String, let action:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: action, style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
@@ -57,15 +57,15 @@ class MyProfile: UIViewController {
         }
     
         if profFirstName.text != "" {
-            currentUser!["firstname"] = profFirstName.text
+            currentUser!["firstname"] = profFirstName.text!
         }
         
         if profLastName.text != "" {
-            currentUser!["lastname"] = profLastName.text
+            currentUser!["lastname"] = profLastName.text!
         }
         
         if profPhone.text != "" {
-            currentUser!["phone"] = profPhone.text
+            currentUser!["phone"] = profPhone.text!
         }
         
         if profEmail.text != "" {
