@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class ListItem: UIViewController {
+class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet var itemName: UITextField!
     @IBOutlet var priceSwitch: UISwitch!
@@ -57,13 +57,18 @@ class ListItem: UIViewController {
             if priceSwitch.on {
                 
                 // check for decimals
-                
-                rentedItem["rental_price_onetime"] = Int(itemPrice.text!)!
+                if let price = Float(itemPrice.text!)
+                {
+                    rentedItem["rental_price_onetime"] = price
+                }
                 rentedItem["rental_price_daily"] = 0
             }
             else {
                 rentedItem["rental_price_onetime"] = 0
-                rentedItem["rental_price_daily"] = Int(itemPrice.text!)!
+                if let dailyPrice = Float(itemPrice.text!)
+                {
+                    rentedItem["rental_price_daily"] = dailyPrice
+                }
             }
             
             rentedItem["category"] = itemCategory.text!
@@ -132,8 +137,6 @@ class ListItem: UIViewController {
 
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -141,6 +144,10 @@ class ListItem: UIViewController {
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

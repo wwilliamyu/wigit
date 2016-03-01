@@ -12,10 +12,20 @@ import Parse
 import Bolts
 
 class ItemSearch: UIViewController {
+    let api: WigitAPI = WigitAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        api.allItems({ (let objects, let error) -> Void in
+            if objects != nil {
+                print("COUNT: \(objects!.count) OBJECTS: \(objects)")
+            }
+
+            }, error: 0)
     }
     
     override func didReceiveMemoryWarning() {
