@@ -59,6 +59,7 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate {
                 // check for decimals
                 if let price = Float(itemPrice.text!)
                 {
+                    print("SETTING ONETIME PRICE")
                     rentedItem["rental_price_onetime"] = price
                 }
                 rentedItem["rental_price_daily"] = 0

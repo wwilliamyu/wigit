@@ -19,10 +19,16 @@ class ItemDetails: UIViewController {
     @IBOutlet var displayCategory: UILabel!
     @IBOutlet var displayReturnDate: UILabel!
     @IBOutlet var displayLocation: UILabel!
+    var item: PFObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
     
