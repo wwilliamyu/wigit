@@ -58,6 +58,12 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let detailView = self.storyboard!.instantiateViewControllerWithIdentifier("itemDetails") as! ItemDetails
+        detailView.item = self.objects[indexPath.row]
+        self.presentViewController(detailView, animated: true, completion: nil)
+    }
+    
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
         return CGSize(width: (self.view.frame.size.width / 2) - 8, height: 280.0)
     }
