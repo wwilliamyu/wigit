@@ -67,6 +67,41 @@ class ItemDetails: UIViewController {
         }
     }
     
+    @IBAction func requestRental()
+    {
+        if item != nil
+        {
+            let rentalAlert = UIAlertController(title: "Rent Item", message: "Do you want to rent this item?", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let rentAction = UIAlertAction(title: "Rent", style: .Default, handler: { (let action) -> Void in
+                self.initiateRental()
+            })
+            rentalAlert.addAction(cancelAction)
+            rentalAlert.addAction(rentAction)
+            self.presentViewController(rentalAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func initiateRental()
+    {
+        //Create a new WigitRentalModel
+        let rental = WigitRentalModel()
+        
+        //Define the item, renter and lender properly
+        rental.rentedItem?.addObject(item!)
+        rental.lender = item!["owner"] as? String
+        rental.renter = PFUser.currentUser()!.username!
+        
+        //set the status to 1
+        rental.itemStatus = 1
+        rental.saveEventually()
+        //Add rentalStatus of 1 to the item itself
+        print("itemID: \(self.item!.objectId!)")
+        let updatedItem = PFObject(outDataWithClassName: "RentedItem", objectId: self.item!.objectId!)
+        updatedItem.setObject("1", forKey: "rentalStatus")
+        updatedItem.saveEventually()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

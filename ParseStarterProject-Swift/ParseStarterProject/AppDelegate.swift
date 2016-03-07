@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //--------------------------------------
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //Register PFObject subclasses
+        WigitRentalModel.registerSubclass()
+        WigitPaymentModel.registerSubclass()
+        
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
@@ -51,8 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // If you would like all objects to be private by default, remove this line.
         defaultACL.publicReadAccess = true
+        defaultACL.publicWriteAccess = true
 
         PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser:true)
+        
 
         if application.applicationState != UIApplicationState.Background {
             // Track an app open here if we launch with a push, unless
