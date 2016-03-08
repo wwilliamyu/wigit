@@ -113,6 +113,15 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate {
                 if (success) {
                     // The object has been saved.
                     func confirmedListing(alert: UIAlertAction!) {
+                        let api = WigitAPI()
+                        api.geocodeAddress(rentedItem["pickup_location"] as! String, completion: { (let lat, let lon, let error) in
+                            if error == 0
+                            {
+                                print("saving coordinates of \(lat), \(lon)")
+                                rentedItem["coordinates"] = PFGeoPoint(latitude: lat, longitude: lon)
+                                rentedItem.saveEventually()
+                            }
+                        })
                         self.performSegueWithIdentifier("ListedItem", sender: sender)
                     }
                     

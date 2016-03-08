@@ -8,7 +8,6 @@
 */
 
 import UIKit
-
 import Parse
 import Bolts
 
@@ -74,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
             }
         }
+        
+        Stripe.setDefaultPublishableKey("pk_test_jB5pDPIKvYVHgHIRBcSw4PqG")
 
         //
         //  Swift 1.2

@@ -27,7 +27,7 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
     }
     
     override func viewDidAppear(animated: Bool) {
-        api.allItems({ (let objects, let error) -> Void in
+        api.nearbyItems({ (let objects, let error) -> Void in
             if objects != nil {
                 print("COUNT: \(objects!.count) OBJECTS: \(objects)")
                 self.objects = objects!

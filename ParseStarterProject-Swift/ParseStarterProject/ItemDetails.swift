@@ -91,7 +91,7 @@ class ItemDetails: UIViewController {
         rental.rentedItem?.addObject(item!)
         rental.lender = item!["owner"] as? String
         rental.renter = PFUser.currentUser()!.username!
-        
+        rental.dueDate = item!["return_date"] as? String
         //set the status to 1
         rental.itemStatus = 1
         rental.saveEventually()

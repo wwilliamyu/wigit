@@ -88,10 +88,14 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == rentedItems
         {
-    
+            let rentalView = self.storyboard?.instantiateViewControllerWithIdentifier("RenterDetailView") as! RenterDetailViewController
+            rentalView.item = self.rentedItemsList[indexPath.row]
+            self.presentViewController(rentalView, animated: true, completion: nil)
         } else if tableView == lendedItems
         {
-            
+            let lenderView = self.storyboard?.instantiateViewControllerWithIdentifier("LenderDetailView") as! LenderDetailViewController
+            lenderView.item = self.lentItemsList[indexPath.row]
+            self.presentViewController(lenderView, animated: true, completion: nil)
         }
     }
     
