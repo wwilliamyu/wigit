@@ -105,8 +105,14 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
         let currentUser = PFUser.currentUser()
         if currentUser != nil
         {
-            currentUser!["paymentToken"] = token
-            currentUser!.saveEventually()
+            PFCloud.callFunctionInBackground("createCustomer", withParameters: ["tokenId" : token], block: { (let objects, let error) in
+                print("RESPONSE: \(objects)")
+                if (objects as? String) != nil
+                {
+                    currentUser!["paymentToken"] = objects as! String
+                    currentUser!.saveEventually()
+                }
+            })
         }
     }
     
@@ -265,6 +271,30 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
         //change rental's status and save
         rental.itemStatus = newStatus
         rental.saveInBackground()
+    }
+    
+    func makeStripePayment(tokenId: String, amount: Int, rental: WigitRentalModel, completion:()->()) {
+        let params: [String: NSObject] = ["customerId": tokenId,
+                                          "amount": amount]
+        PFCloud.callFunctionInBackground("chargeCustomer", withParameters: params) { (result, error) -> Void in
+            if error == nil {
+                print(result)
+                let payment = WigitPaymentModel()
+                payment.payer?.addObject(PFUser.currentUser()!)
+                payment.rental?.addObject(rental)
+                payment.payee = rental.lender!
+                let dateFormatter:NSDateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MM-dd-yyyy"
+                let dateInFormat:String = dateFormatter.stringFromDate(NSDate())
+                payment.paidDate = dateInFormat
+                payment.amount = Double(amount) / 100
+                payment.paymentStatus = 1
+                payment.saveEventually()
+                completion()
+            } else {
+                print(error)
+            }
+        }
     }
     
 }

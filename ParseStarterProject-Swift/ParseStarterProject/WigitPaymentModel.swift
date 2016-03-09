@@ -18,17 +18,27 @@ class WigitPaymentModel: PFObject, PFSubclassing
     //payer (relation)
     var payer: PFRelation? {
         get {
-            return self["payer"] as? PFRelation
+            return self.relationForKey("payer") as PFRelation
         }
         set {
             self["payer"] = newValue!
         }
     }
     
-    //payee (relation)
-    var payee: PFRelation? {
+    //rental (relation)
+    var rental: PFRelation? {
         get {
-            return self["payee"] as? PFRelation
+            return self.relationForKey("rental") as PFRelation
+        }
+        set {
+            self["rental"] = newValue!
+        }
+    }
+    
+    //payee (relation)
+    var payee: String? {
+        get {
+            return self["payee"] as? String
         }
         set {
             self["payee"] = newValue!
@@ -46,9 +56,9 @@ class WigitPaymentModel: PFObject, PFSubclassing
     }
     
     //Amount
-    var amount: Float? {
+    var amount: Double? {
         get {
-            return self["amount"] as? Float
+            return self["amount"] as? Double
         }
         set {
             self["amount"] = newValue!

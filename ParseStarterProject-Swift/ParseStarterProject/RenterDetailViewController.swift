@@ -82,9 +82,45 @@ class RenterDetailViewController: UIViewController {
     
     @IBAction func payForRental(sender: AnyObject)
     {
-        if api.tokenForUser() != nil
+      let paymentAlert = UIAlertController(title: "Rental Payment", message: "Do you want to pay $\(self.rentalAmount()) for \(self.item!["name"] as! String)?", preferredStyle: .Alert)
+      paymentAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        let payAction = UIAlertAction(title: "Pay", style: .Default) { (let action) in
+            self.processPayment()
+        }
+        paymentAlert.addAction(payAction)
+        self.presentViewController(paymentAlert, animated: true, completion: nil)
+    }
+    
+    func rentalAmount() -> Double
+    {
+        var amount = 0.0
+        if self.item!.objectForKey("rental_price_onetime") != nil && self.item!["rental_price_onetime"] as! Double > 0.0
+        {
+            amount = self.item!["rental_price_onetime"] as! Double
+        }
+        else if self.item!.objectForKey("rental_price_daily") != nil && self.item!["rental_price_daily"] as! Double > 0.0
+        {
+            amount = self.item!["rental_price_daily"] as! Double
+        }
+        return amount
+    }
+    
+    func processPayment()
+    {
+        if api.tokenForUser() != nil && api.tokenForUser() != "NONE"
         {
             print("should be processing payment here.")
+                        api.makeStripePayment(api.tokenForUser()!, amount: Int(self.rentalAmount() * 100), rental: self.rental!, completion: { Void in
+                self.api.updateRentalStatus(self.rental!, newStatus: 5)
+                let successAlert = UIAlertController(title: "Payment Successful!", message: nil, preferredStyle: .Alert)
+                successAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:
+                    { Void in self.dismiss(self) })
+                )
+                            dispatch_async(dispatch_get_main_queue(), { 
+                                self.presentViewController(successAlert, animated: true, completion: nil)
+                            })
+                
+            })
         } else {
             //first time payment
             let paymentInfoView = self.storyboard!.instantiateViewControllerWithIdentifier("PaymentInfo") as! PaymentInfoViewController
