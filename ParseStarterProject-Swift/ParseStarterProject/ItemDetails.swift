@@ -97,7 +97,7 @@ class ItemDetails: UIViewController {
         rental.saveEventually()
         //Add rentalStatus of 1 to the item itself
         print("itemID: \(self.item!.objectId!)")
-        let updatedItem = PFObject(outDataWithClassName: "RentedItem", objectId: self.item!.objectId!)
+        let updatedItem = PFObject(withoutDataWithClassName: "RentedItem", objectId: self.item!.objectId!)
         updatedItem.setObject("1", forKey: "rentalStatus")
         updatedItem.saveEventually()
     }
