@@ -1,0 +1,18 @@
+PODS:
+  - CHTCollectionViewWaterfallLayout (0.9.2)
+  - LMGeocoder (1.0.4)
+  - Stripe (6.2.0):
+    - Stripe/Core (= 6.2.0)
+  - Stripe/Core (6.2.0)
+
+DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
+  - LMGeocoder
+  - Stripe
+
+SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 43232febcb3e4d3985cd758718cbe499b21b822f
+  LMGeocoder: a0f635f948b0ca420d8d338e54886744cdcb215d
+  Stripe: 275524137e6c4cc1058f6d32ece248adf30a21f9
+
+COCOAPODS: 0.39.0

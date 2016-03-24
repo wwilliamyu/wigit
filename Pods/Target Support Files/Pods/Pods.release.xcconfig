@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CHTCollectionViewWaterfallLayout" "${PODS_ROOT}/Headers/Public/LMGeocoder" "${PODS_ROOT}/Headers/Public/Stripe"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CHTCollectionViewWaterfallLayout" -isystem "${PODS_ROOT}/Headers/Public/LMGeocoder" -isystem "${PODS_ROOT}/Headers/Public/Stripe"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CHTCollectionViewWaterfallLayout" -l"LMGeocoder" -l"Stripe" -framework "Foundation" -framework "Security" -weak_framework "AddressBook" -weak_framework "PassKit"
+PODS_ROOT = ${SRCROOT}/Pods
