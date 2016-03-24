@@ -108,13 +108,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		575CB50D1C8DEEB2001EBF5B /* Parse Models */ = {
+		3CC3384C1CA494660090CCC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57B9A8051C8F380D0080023C /* LenderDetailViewController.swift */,
+				57B9A8071C8F4D8D0080023C /* RenterDetailViewController.swift */,
+				575F623C1C8F7234002D116B /* PaymentInfoViewController.swift */,
+				81BA814C1A49DA1800E65899 /* ViewController.swift */,
+				E9837C0E1C3E12E400ACDC02 /* Signup.swift */,
+				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
+				E9B35B6F1C43693300D61878 /* Home.swift */,
+				E955DD401C4B8E5900CAE1BC /* MyProfile.swift */,
+				E93ACC3B1C521AD600268B60 /* ItemDetails.swift */,
+				E9B35B7F1C46461F00D61878 /* ItemSearch.swift */,
+				E9B35B711C436E2000D61878 /* ListItem.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3CC3384D1CA4946C0090CCC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3CC338501CA494D50090CCC0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				57262C611C86189300DBEF0C /* WigitAPI.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		575CB50D1C8DEEB2001EBF5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				575CB50E1C8DEEC7001EBF5B /* WigitRentalModel.swift */,
 				575CB5101C8DF3C7001EBF5B /* WigitPaymentModel.swift */,
 			);
-			name = "Parse Models";
+			name = Model;
 			sourceTree = "<group>";
 		};
 		814C3AC51B69877600E307BB /* Resources */ = {
@@ -154,23 +188,13 @@
 		81BA81471A49DA1800E65899 /* ParseStarterProject */ = {
 			isa = PBXGroup;
 			children = (
-				575CB50D1C8DEEB2001EBF5B /* Parse Models */,
+				575CB50D1C8DEEB2001EBF5B /* Model */,
+				3CC3384D1CA4946C0090CCC0 /* View */,
+				3CC3384C1CA494660090CCC0 /* Controller */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
-				81BA814C1A49DA1800E65899 /* ViewController.swift */,
-				E9837C0E1C3E12E400ACDC02 /* Signup.swift */,
+				3CC338501CA494D50090CCC0 /* Util */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
-				E9B35B6F1C43693300D61878 /* Home.swift */,
-				E9B35B711C436E2000D61878 /* ListItem.swift */,
-				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
-				E9B35B7F1C46461F00D61878 /* ItemSearch.swift */,
-				E955DD401C4B8E5900CAE1BC /* MyProfile.swift */,
-				E93ACC3B1C521AD600268B60 /* ItemDetails.swift */,
 				575FD0201C80DEC80004BC54 /* Launch Screen.storyboard */,
-				57262C611C86189300DBEF0C /* WigitAPI.swift */,
-				571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */,
-				57B9A8051C8F380D0080023C /* LenderDetailViewController.swift */,
-				57B9A8071C8F4D8D0080023C /* RenterDetailViewController.swift */,
-				575F623C1C8F7234002D116B /* PaymentInfoViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -465,7 +489,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject-Swift-Bridging-Header.h";
@@ -484,7 +508,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject-Swift-Bridging-Header.h";
