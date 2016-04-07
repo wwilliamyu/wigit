@@ -50,7 +50,7 @@ class TermsAndConditions: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if let pdf = NSBundle.mainBundle().URLForResource("mp3_fa15", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+        if let pdf = NSBundle.mainBundle().URLForResource("Terms_and_Conditions", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(URL: pdf)
             tacView.loadRequest(req)
             self.view.addSubview(tacView)

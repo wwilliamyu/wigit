@@ -27,6 +27,7 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		9B561F1B7106EEF030EA40A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBD2F20BBFE0F1F8AE440E8 /* libPods.a */; };
+		E933FBA81CB35E0F0026C736 /* Terms_and_Conditions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E933FBA71CB35E0F0026C736 /* Terms_and_Conditions.pdf */; };
 		E93ACC3C1C521AD600268B60 /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93ACC3B1C521AD600268B60 /* ItemDetails.swift */; };
 		E950B7DB1CA48C69008ABD1B /* wigit.png in Resources */ = {isa = PBXBuildFile; fileRef = E950B7DA1CA48C69008ABD1B /* wigit.png */; };
 		E955DD411C4B8E5900CAE1BC /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955DD401C4B8E5900CAE1BC /* MyProfile.swift */; };
@@ -69,6 +70,7 @@
 		9EBD2F20BBFE0F1F8AE440E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77C97C5038A16D37BC0EB0A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D14E57B8DF94E67CAC872CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E933FBA71CB35E0F0026C736 /* Terms_and_Conditions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Terms_and_Conditions.pdf; sourceTree = "<group>"; };
 		E93ACC3B1C521AD600268B60 /* ItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
 		E950B7DA1CA48C69008ABD1B /* wigit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wigit.png; sourceTree = "<group>"; };
 		E955DD401C4B8E5900CAE1BC /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				E950B7DA1CA48C69008ABD1B /* wigit.png */,
 				E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */,
 				E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */,
+				E933FBA71CB35E0F0026C736 /* Terms_and_Conditions.pdf */,
 				2D28E8F294F33E54130F430F /* Pods */,
 				571B22131C88B1F900B190BD /* ParseStarterProject-Swift-Bridging-Header.h */,
 			);
@@ -286,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E933FBA81CB35E0F0026C736 /* Terms_and_Conditions.pdf in Resources */,
 				E9B35B7E1C4642DB00D61878 /* mp3_fa15.pdf in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
