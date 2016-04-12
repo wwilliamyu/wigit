@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class MyProfile: UIViewController {
+class MyProfile: UIViewController, UINavigationBarDelegate {
 
     @IBOutlet var profUsername: UITextField!
     @IBOutlet var profPassword: UITextField!
@@ -97,6 +97,10 @@ class MyProfile: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     override func didReceiveMemoryWarning() {

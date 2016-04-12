@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Home: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate {
     
     @IBOutlet var introduction: UILabel!
     @IBOutlet var rentedItems: UITableView!
@@ -97,6 +97,10 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
             lenderView.item = self.lentItemsList[indexPath.row]
             self.presentViewController(lenderView, animated: true, completion: nil)
         }
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     override func didReceiveMemoryWarning() {

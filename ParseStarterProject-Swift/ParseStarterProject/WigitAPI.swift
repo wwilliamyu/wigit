@@ -10,6 +10,7 @@ import Foundation
 import Parse
 import Bolts
 import CoreLocation
+import LMGeocoder
 
 class WigitAPI: NSObject, CLLocationManagerDelegate
 {

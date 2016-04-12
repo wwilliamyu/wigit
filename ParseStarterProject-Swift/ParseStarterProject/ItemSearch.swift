@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout {
+class ItemSearch: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout, UINavigationBarDelegate {
     let api: WigitAPI = WigitAPI()
     var collectionView: UICollectionView?
     var objects: [PFObject] = [PFObject]()
@@ -20,8 +20,8 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         //collectionView
-        collectionView!.delegate = self
-        collectionView!.dataSource = self
+        let layout = CHTCollectionViewWaterfallLayout()
+        self.collectionView!.collectionViewLayout = layout
         //collectionView!.registerClass(WigitCollectionViewCell.self, forCellWithReuseIdentifier: CELL_IDENTIFIER)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -42,6 +42,7 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        print("trying to make cell #\(indexPath.row)")
         let cell: WigitCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(CELL_IDENTIFIER, forIndexPath: indexPath) as! WigitCollectionViewCell
         
         cell.itemName!.text = "\(self.objects[indexPath.row]["name"])"
@@ -56,7 +57,9 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
             }
         }
         return cell
+
     }
+    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailView = self.storyboard!.instantiateViewControllerWithIdentifier("itemDetails") as! ItemDetails
@@ -64,11 +67,12 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
         self.presentViewController(detailView, animated: true, completion: nil)
     }
     
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+    
+     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: (self.view.frame.size.width / 2) - 8, height: 280.0)
     }
     
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 10.0
     }
     
@@ -76,8 +80,12 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, CHTCollectionVie
         return 10.0
     }
     
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10.0, left: 8.0, bottom: 0.0, right: 8.0)
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     

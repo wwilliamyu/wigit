@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 class PaymentInfoViewController: UIViewController, STPPaymentCardTextFieldDelegate {
     @IBOutlet var saveButton: UIButton!

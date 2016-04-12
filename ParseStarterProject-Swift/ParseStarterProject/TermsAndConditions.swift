@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class TermsAndConditions: UIViewController {
+class TermsAndConditions: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var acceptTAC: UIButton!
     @IBOutlet var declineTAC: UIButton!
@@ -56,6 +56,10 @@ class TermsAndConditions: UIViewController {
             self.view.addSubview(tacView)
         }
         
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     override func didReceiveMemoryWarning() {

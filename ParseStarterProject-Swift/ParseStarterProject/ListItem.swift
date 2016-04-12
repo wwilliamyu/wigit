@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationBarDelegate {
 
     @IBOutlet var itemName: UITextField!
     @IBOutlet var priceSwitch: UISwitch!
@@ -157,6 +157,10 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class ItemDetails: UIViewController {
+class ItemDetails: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var displayName: UILabel!
     @IBOutlet var displayPrice: UILabel!
@@ -100,6 +100,10 @@ class ItemDetails: UIViewController {
         let updatedItem = PFObject(outDataWithClassName: "RentedItem", objectId: self.item!.objectId!)
         updatedItem.setObject("1", forKey: "rentalStatus")
         updatedItem.saveEventually()
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached;
     }
     
     override func didReceiveMemoryWarning() {
