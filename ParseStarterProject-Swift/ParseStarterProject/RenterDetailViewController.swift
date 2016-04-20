@@ -117,7 +117,7 @@ class RenterDetailViewController: UIViewController {
                         self.api.ownerForItem(self.item!, completion: { (let owner) in
                             if owner != nil
                             {
-                                self.api.reverseStripeDeposit(self.rental!, lender: owner!, amount: self.item!["deposit"] as! Int, completion: {
+                                self.api.reverseStripeDeposit(self.rental!, lender: owner!, amount: Int((self.item!["deposit"] as! Int) * 100), completion: {
                                     
                                 })
                             }

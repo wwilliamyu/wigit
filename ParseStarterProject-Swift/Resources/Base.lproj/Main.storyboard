@@ -888,7 +888,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXz-uK-o3t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXz-uK-o3t">
                                 <rect key="frame" x="276" y="513" width="49" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="XnG-4V-Xjo"/>
@@ -2143,8 +2143,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LRp-Ld-Gyj"/>
-        <segue reference="AKg-Ql-bWy"/>
+        <segue reference="IHs-LW-KWx"/>
         <segue reference="zo5-Ml-HbR"/>
+        <segue reference="AKg-Ql-bWy"/>
     </inferredMetricsTieBreakers>
 </document>
