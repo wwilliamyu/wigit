@@ -55,6 +55,15 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavi
             }, error: 0)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if api.tokenForUser() == nil || api.tokenForUser() == "NONE" {
+            let paymentInfoView = self.storyboard!.instantiateViewControllerWithIdentifier("PaymentInfo") as! PaymentInfoViewController
+            self.presentViewController(paymentInfoView, animated: true, completion: nil)
+        }
+
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.rentedItems
         {

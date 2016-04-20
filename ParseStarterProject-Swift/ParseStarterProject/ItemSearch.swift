@@ -9,6 +9,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 import Bolts
 
 class ItemSearch: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout, UINavigationBarDelegate {
@@ -55,6 +56,14 @@ class ItemSearch: UIViewController, UICollectionViewDataSource, UICollectionView
             } else {
                 cell.itemPrice!.text = "$$$?"
             }
+        }
+        if cell.image.image != nil { cell.image.image = nil }
+        if let file = self.objects[indexPath.row]["thumbnail"] as? PFFile
+        {
+            cell.image.file = file
+            cell.image.loadInBackground()
+        } else {
+            cell.image.image = nil
         }
         return cell
 

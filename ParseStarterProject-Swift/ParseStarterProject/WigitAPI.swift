@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import Stripe
 import Bolts
 import CoreLocation
 import LMGeocoder
@@ -117,6 +118,24 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
         }
     }
     
+    func updateRecipientToken(token: String, name: String)
+    {
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil
+        {
+            PFCloud.callFunctionInBackground("createRecipient", withParameters: ["name" : name, "card" : token, "type" : "individual"], block: { (let objects, let error) in
+                print("RESPONSE: \(objects)")
+                if let response = objects as? Dictionary<String, AnyObject>
+                {
+                    currentUser!["recipientToken"] = response["id"]
+                    currentUser!.saveEventually()
+                } else {
+                    print("failed to cast response as Dictionary.")
+                }
+            })
+        }
+    }
+    
     func tokenForUser() -> String?
     {
         let currentUser = PFUser.currentUser()
@@ -124,6 +143,20 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
             if currentUser!.objectForKey("paymentToken") != nil
             {
                 return currentUser!["paymentToken"] as? String
+            }
+            return nil
+        }
+        return nil
+    }
+    
+    func customerIdForUser() -> String?
+    {
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil
+        {
+            if currentUser!.objectForKey("recipientToken") != nil
+            {
+                return currentUser!["recipientToken"] as? String
             }
             return nil
         }
@@ -146,6 +179,45 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
                         }
                     }
                 })
+            }
+        }
+    }
+    
+    func ownerForItem(item: PFObject, completion:(PFUser?)->())
+    {
+        if let ownerRelation = item["ownerAccount"] as? PFRelation
+        {
+            let ownerQuery = ownerRelation.query()
+            ownerQuery.findObjectsInBackgroundWithBlock { (let objects, let error) in
+                if objects != nil
+                {
+                    if let owner = objects!.first as? PFUser
+                    {
+                        completion(owner)
+                    } else {
+                        completion(nil)
+                    }
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    func lenderForRental(rental: WigitRentalModel, completion:(PFUser?)->())
+    {
+        let lenderQuery = rental.lender!.query()
+        lenderQuery.findObjectsInBackgroundWithBlock { (let objects, let error) in
+            if objects != nil
+            {
+                if let owner = objects!.first as? PFUser
+                {
+                    completion(owner)
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
             }
         }
     }
@@ -198,7 +270,7 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
         {
             let query = PFQuery(className: "WigitRentalModel")
             query.limit = 100
-            query.whereKey("lender", equalTo:currentUser!["username"] as! String)
+            query.whereKey("lenderName", equalTo:currentUser!["username"] as! String)
             query.whereKey("itemStatus", notEqualTo: 5)
             query.findObjectsInBackgroundWithBlock({ (let objects, let error) -> Void in
                 if objects != nil
@@ -274,7 +346,7 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
         rental.saveInBackground()
     }
     
-    func makeStripePayment(tokenId: String, amount: Int, rental: WigitRentalModel, completion:()->()) {
+    func makeStripeDeposit(tokenId: String, amount: Int, payee: String, completion:()->()) {
         let params: [String: NSObject] = ["customerId": tokenId,
                                           "amount": amount]
         PFCloud.callFunctionInBackground("chargeCustomer", withParameters: params) { (result, error) -> Void in
@@ -282,8 +354,7 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
                 print(result)
                 let payment = WigitPaymentModel()
                 payment.payer?.addObject(PFUser.currentUser()!)
-                payment.rental?.addObject(rental)
-                payment.payee = rental.lender!
+                payment.payee = payee
                 let dateFormatter:NSDateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "MM-dd-yyyy"
                 let dateInFormat:String = dateFormatter.stringFromDate(NSDate())
@@ -293,6 +364,61 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
                 payment.saveEventually()
                 completion()
             } else {
+                print(error)
+            }
+        }
+
+    }
+    
+    func reverseStripeDeposit(rental:WigitRentalModel, lender: PFUser, amount: Int, completion:()->())
+    {
+        if PFUser.currentUser()?.objectForKey("recipientToken") != nil
+        {
+            let params: [String: NSObject] = ["amount": amount, "destination": PFUser.currentUser()!["recipientToken"] as! String]
+            PFCloud.callFunctionInBackground("transferToRecipient", withParameters: params) { (result, error) in
+                if error == nil
+                {
+                    print(result)
+                    let payment = WigitPaymentModel()
+                    payment.payer?.addObject(lender)
+                    payment.rental?.addObject(rental)
+                    payment.payee = PFUser.currentUser()!.username!
+                    let dateFormatter:NSDateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "MM-dd-yyyy"
+                    let dateInFormat:String = dateFormatter.stringFromDate(NSDate())
+                    payment.paidDate = dateInFormat
+                    payment.amount = Double(amount) / 100
+                    payment.paymentStatus = 1
+                    payment.saveEventually()
+                    completion()
+                } else {
+                    print("error transfering desposit: \(error!.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    func makeStripePayment(tokenId: String, amount: Int, rental: WigitRentalModel, completion:()->()) {
+        let params: [String: NSObject] = ["customerId": tokenId,
+                                          "amount": amount]
+        PFCloud.callFunctionInBackground("chargeCustomer", withParameters: params) { (result, error) -> Void in
+            if error == nil {
+                print(result)
+                self.lenderForRental(rental, completion: { (let lender) in
+                    let payment = WigitPaymentModel()
+                    payment.payer?.addObject(PFUser.currentUser()!)
+                    payment.rental?.addObject(rental)
+                    payment.payee = lender!.username!
+                    let dateFormatter:NSDateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "MM-dd-yyyy"
+                    let dateInFormat:String = dateFormatter.stringFromDate(NSDate())
+                    payment.paidDate = dateInFormat
+                    payment.amount = Double(amount) / 100
+                    payment.paymentStatus = 1
+                    payment.saveEventually()
+                    completion()
+                })
+                } else {
                 print(error)
             }
         }

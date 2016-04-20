@@ -11,6 +11,7 @@ import Stripe
 
 class PaymentInfoViewController: UIViewController, STPPaymentCardTextFieldDelegate {
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var nameField: UITextField!
     var paymentTextField = STPPaymentCardTextField()
     
     override func viewDidLoad() {
@@ -32,16 +33,33 @@ class PaymentInfoViewController: UIViewController, STPPaymentCardTextFieldDelega
     }
     
     @IBAction func save(sender: UIButton) {
-        let card = paymentTextField.cardParams
-        STPAPIClient.sharedClient().createTokenWithCard(card) { (token, error) -> Void in
-            if let error = error  {
-                print("Stripe error: \(error.localizedDescription)")
+        if nameField.text! != "" {
+            let card = paymentTextField.cardParams
+            STPAPIClient.sharedClient().createTokenWithCard(card) { (token, error) -> Void in
+                if let error = error  {
+                    print("Stripe error: \(error.localizedDescription)")
+                }
+                else if token != nil {
+                    let api = WigitAPI()
+                    api.updatePaymentToken(token!.tokenId)
+                    print("updated token: \(token!.tokenId)")
+                    STPAPIClient.sharedClient().createTokenWithCard(card, completion: { (token, error) in
+                        if let error = error {
+                            print ("Stripe error: \(error.localizedDescription)")
+                        }
+                        else if token != nil
+                        {
+                            print("new token: \(token!.tokenId)");
+                            WigitAPI().updateRecipientToken(token!.tokenId, name: self.nameField.text!)
+                        }
+                    })
+                }
             }
-            else if token != nil {
-                let api = WigitAPI()
-                api.updatePaymentToken(token!.tokenId)
-                print("updated token: \(token!.tokenId)")
-            }
+        } else
+        {
+            let nameAlert = UIAlertController(title: "Please enter your full legal name.", message: nil, preferredStyle: .Alert)
+            nameAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(nameAlert, animated: true, completion: nil)
         }
     }
     

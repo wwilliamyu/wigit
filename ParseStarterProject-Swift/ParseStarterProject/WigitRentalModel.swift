@@ -25,13 +25,33 @@ class WigitRentalModel: PFObject, PFSubclassing
         }
     }
     
-    //Lender (relation)
-    var lender: String? {
+    //renterUser (relation)
+    var renterUser: PFRelation? {
         get {
-            return self["lender"] as? String
+            return self.relationForKey("renterUser") as? PFRelation
+        }
+        set {
+            self["rentarUser"] = newValue!
+        }
+    }
+    
+    //Lender (relation)
+    var lender: PFRelation? {
+        get {
+            return self.relationForKey("lender") as? PFRelation
         }
         set {
             self["lender"] = newValue!
+        }
+    }
+    
+    //lenderName (String)
+    var lenderName: String? {
+        get {
+            return self["lenderName"] as? String
+        }
+        set {
+            self["lenderName"] = newValue!
         }
     }
     

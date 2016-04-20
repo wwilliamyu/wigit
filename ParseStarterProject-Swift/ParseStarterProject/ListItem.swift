@@ -11,11 +11,13 @@ import UIKit
 import Parse
 import Bolts
 
-class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationBarDelegate {
+class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var itemName: UITextField!
     @IBOutlet var priceSwitch: UISwitch!
     @IBOutlet var itemPrice: UITextField!
+    @IBOutlet var deposit: UITextField!
+    @IBOutlet var depositLabel: UILabel!
     
     @IBOutlet var itemTags: UITextField!
     @IBOutlet var itemCategory: UITextField!
@@ -29,6 +31,12 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
     @IBOutlet var itemDetails: UITextView!
     
     @IBOutlet var listItemButton: UIButton!
+    @IBOutlet var addImageButton: UIButton!
+    
+    @IBOutlet var scrollView: UIScrollView!
+    
+    @IBOutlet var thumbnail: UIImageView!
+    let imagePicker = UIImagePickerController()
     
     func displayAlert(let title:String, let message:String, let action:String)
     {
@@ -44,7 +52,7 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
     }
     
     @IBAction func listItem(sender: AnyObject) {
-        if itemName.text == "" || itemPrice.text == "" || itemCategory.text == "" || returnMonth.text == "" || returnDay.text == "" || returnYear.text == "" || pickupLocation == "" {
+        if itemName.text == "" || itemPrice.text == "" || itemCategory.text == "" || returnMonth.text == "" || returnDay.text == "" || returnYear.text == "" || pickupLocation == "" || thumbnail.image == nil {
             
             self.displayAlert("Error!", message: "Please fill out all fields.", action: "Okay")
             
@@ -72,6 +80,14 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
                 }
             }
             
+            if deposit.text == ""
+            {
+                rentedItem["deposit"] = 0
+            } else {
+                rentedItem["deposit"] = Int(deposit.text!)!
+            }
+            
+            
             rentedItem["category"] = itemCategory.text!
             
             rentedItem["tags"] = itemTags.text! // future changes impending!!!
@@ -88,10 +104,15 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
                 // Do stuff with the user
                 
                 rentedItem["owner"] = (currentUser!["username"] as! String)
-                
+                rentedItem.relationForKey("ownerAccount").addObject(currentUser!)
             } else {
                 // Show the signup or login screen
                 print("There is a problem with currentUser in ListItem.swift")
+            }
+            
+            if self.thumbnail.image != nil
+            {
+                rentedItem["thumbnail"] = PFFile(data: UIImagePNGRepresentation(self.thumbnail.image!)!)
             }
 
             
@@ -120,9 +141,14 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
                                 print("saving coordinates of \(lat), \(lon)")
                                 rentedItem["coordinates"] = PFGeoPoint(latitude: lat, longitude: lon)
                                 rentedItem.saveEventually()
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    let details = self.storyboard!.instantiateViewControllerWithIdentifier("itemDetails") as! ItemDetails
+                                    details.item = rentedItem
+                                    self.presentViewController(details, animated: true, completion: nil)
+                                })
                             }
                         })
-                        self.performSegueWithIdentifier("ListedItem", sender: sender)
+                        
                     }
                     
                     let alert = UIAlertController(title: "Congratulations", message: "You have listed an item!", preferredStyle: .Alert)
@@ -154,6 +180,14 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
         
     }
     
+    @IBAction func addImage(sender: AnyObject)
+    {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .Camera
+        imagePicker.delegate = self
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -167,5 +201,45 @@ class ListItem: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINav
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setImage(image: UIImage)
+    {
+        let size = CGSizeApplyAffineTransform(image.size, CGAffineTransformMakeScale(0.2, 0.2))
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.drawInRect(CGRect(origin: CGPointZero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        thumbnail.image = scaledImage
+    }
+    
+    @IBAction func SwitchChanged(switchState: UISwitch)
+    {
+        /*
+        if switchState.on
+        {
+            self.deposit.hidden = true
+            self.depositLabel.hidden = true
+        } else {
+            self.deposit.hidden = false
+            self.depositLabel.hidden = false
+        }
+         */
+    }
+    
+    //MARK -- UIImagePickerControllerDelegate Method
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("entering UIImagePickerController delegate method.")
+        addImageButton.setTitle(" ", forState: .Normal)
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            setImage(pickedImage)
+        }
+    }
+    
 }
 

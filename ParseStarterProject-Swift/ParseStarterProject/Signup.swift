@@ -63,6 +63,8 @@ class Signup: UIViewController {
             user["phone"] = phone.text!
             user.email = email.text
             user["acceptTAC"] = false
+            user["paymentToken"] = "NONE"
+            user["recipientToken"] = "NONE"
             // other fields can be set just like with PFObject
             //user["phone"] = "415-392-0202"
             

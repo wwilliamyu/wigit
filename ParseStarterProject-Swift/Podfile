@@ -2,3 +2,4 @@ use_frameworks!
 
 pod 'Stripe'
 pod 'LMGeocoder'
+pod 'ParseUI'

@@ -26,7 +26,7 @@ class RenterDetailViewController: UIViewController {
                 self.rental = rentalModel
                 dispatch_async(dispatch_get_main_queue(), {
                     self.itemNameLabel.text = self.item!["name"] as? String
-                    self.lenderLabel.text = self.rental!.lender!
+                    self.lenderLabel.text = self.rental!.lenderName!
                     self.dueDateLabel.text = self.rental!.dueDate!
                     self.paymentButton.hidden = true
                     switch self.rental!.itemStatus!
@@ -110,8 +110,20 @@ class RenterDetailViewController: UIViewController {
         if api.tokenForUser() != nil && api.tokenForUser() != "NONE"
         {
             print("should be processing payment here.")
-                        api.makeStripePayment(api.tokenForUser()!, amount: Int(self.rentalAmount() * 100), rental: self.rental!, completion: { Void in
+                api.makeStripePayment(api.tokenForUser()!, amount: Int(self.rentalAmount() * 100), rental: self.rental!, completion: { Void in
                 self.api.updateRentalStatus(self.rental!, newStatus: 5)
+                    if self.item!.objectForKey("deposit") != nil && self.item!["deposit"] as! Int != 0
+                    {
+                        self.api.ownerForItem(self.item!, completion: { (let owner) in
+                            if owner != nil
+                            {
+                                self.api.reverseStripeDeposit(self.rental!, lender: owner!, amount: self.item!["deposit"] as! Int, completion: {
+                                    
+                                })
+                            }
+                        })
+                        
+                    }
                 let successAlert = UIAlertController(title: "Payment Successful!", message: nil, preferredStyle: .Alert)
                 successAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:
                     { Void in self.dismiss(self) })

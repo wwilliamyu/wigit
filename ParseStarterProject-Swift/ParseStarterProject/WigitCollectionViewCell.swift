@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import ParseUI
 
 class WigitCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var image: UIImageView!
+    @IBOutlet var image: PFImageView!
     @IBOutlet var itemName: UILabel!
     @IBOutlet var itemPrice: UILabel!
     
