@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     @IBAction func login(sender: AnyObject) {
         if username.text == "" || password.text == "" {
-            displayAlert("You fucked up!", message: "Username and password are required.", action: "Okay.")
+            displayAlert("Incorrect username/password!", message: "Username and password are required.", action: "Okay.")
         }
         
         PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
                 }
                 
             } else {
-                self.displayAlert("Come on, nigga.", message: "Invalid login credentials.", action: "Try again.")
+                self.displayAlert("Incorrect username/password!", message: "Invalid login credentials.", action: "Try again.")
             }
         }
 
