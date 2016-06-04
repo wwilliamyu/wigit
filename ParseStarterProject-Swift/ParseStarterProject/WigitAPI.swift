@@ -308,7 +308,7 @@ class WigitAPI: NSObject, CLLocationManagerDelegate
     func geocodeAddress(address: String, completion:(Double, Double, Int)->())
     {
         LMGeocoder.sharedInstance().geocodeAddressString(address, service: .AppleService) { (let locations, let error) in
-            if let location = locations.first! as? LMAddress
+            if let location = locations!.first! as? LMAddress
             {
                 print("coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
                 completion(Double(location.coordinate.latitude), Double(location.coordinate.longitude), 0)

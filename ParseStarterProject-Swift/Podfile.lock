@@ -1,0 +1,26 @@
+PODS:
+  - Bolts/Tasks (1.7.0)
+  - LMGeocoder (1.0.5)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
+  - Stripe (7.0.2)
+
+DEPENDENCIES:
+  - LMGeocoder
+  - Parse
+  - ParseUI
+  - Stripe
+
+SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  LMGeocoder: 84027708180aae8eb47eb314bcc2e794e289eb7f
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  Stripe: d1eae5522cf993590f962ac1829a56c2096cf486
+
+PODFILE CHECKSUM: 89c057df587c4dac00d21922359dd3456324dc4e
+
+COCOAPODS: 1.0.0
