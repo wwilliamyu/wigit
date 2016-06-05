@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15D975805F1D22480366919D /* Pods_ParseStarterProject_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766E66624EFA62806A789F2F /* Pods_ParseStarterProject_Swift.framework */; };
-		571B22161C88B1FA00B190BD /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 571B22151C88B1FA00B190BD /* test.m */; };
 		571B22181C88B9CC00B190BD /* WigitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */; };
 		57262C621C86189300DBEF0C /* WigitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57262C611C86189300DBEF0C /* WigitAPI.swift */; };
 		572D892A1CC28ABA003E7DFC /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D89151CC28ABA003E7DFC /* IQNSArray+Sort.m */; };
@@ -58,8 +57,6 @@
 /* Begin PBXFileReference section */
 		48E120E5D3B3C10E01A79B10 /* Pods-ParseStarterProject-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseStarterProject-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseStarterProject-Swift/Pods-ParseStarterProject-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		571B22131C88B1F900B190BD /* ParseStarterProject-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		571B22141C88B1FA00B190BD /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		571B22151C88B1FA00B190BD /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WigitCollectionViewCell.swift; sourceTree = "<group>"; };
 		57262C611C86189300DBEF0C /* WigitAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WigitAPI.swift; sourceTree = "<group>"; };
 		572D89141CC28ABA003E7DFC /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
@@ -126,8 +123,8 @@
 		E9B35B6F1C43693300D61878 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E9B35B711C436E2000D61878 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
-		E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mp2_fa15.pdf; sourceTree = "<group>"; };
-		E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mp3_fa15.pdf; sourceTree = "<group>"; };
+		E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = mp2_fa15.pdf; path = ../mp2_fa15.pdf; sourceTree = "<group>"; };
+		E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = mp3_fa15.pdf; path = ../mp3_fa15.pdf; sourceTree = "<group>"; };
 		E9B35B7F1C46461F00D61878 /* ItemSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +146,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5D57D81D04A22400E228A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */,
+				814C3AC61B69877600E307BB /* Main.storyboard */,
+				575FD0201C80DEC80004BC54 /* Launch Screen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3C5D57D91D04A22A00E228A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81BA814C1A49DA1800E65899 /* ViewController.swift */,
+				E9837C0E1C3E12E400ACDC02 /* Signup.swift */,
+				E9B35B711C436E2000D61878 /* ListItem.swift */,
+				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
+				E9B35B7F1C46461F00D61878 /* ItemSearch.swift */,
+				E9B35B6F1C43693300D61878 /* Home.swift */,
+				E955DD401C4B8E5900CAE1BC /* MyProfile.swift */,
+				E93ACC3B1C521AD600268B60 /* ItemDetails.swift */,
+				57B9A8051C8F380D0080023C /* LenderDetailViewController.swift */,
+				57B9A8071C8F4D8D0080023C /* RenterDetailViewController.swift */,
+				575F623C1C8F7234002D116B /* PaymentInfoViewController.swift */,
+				5748E8291CBC3E24003B150D /* ContactViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		572D89131CC28ABA003E7DFC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,18 +255,20 @@
 			name = "Third-Party Code";
 			sourceTree = "<group>";
 		};
-		575CB50D1C8DEEB2001EBF5B /* Parse Models */ = {
+		575CB50D1C8DEEB2001EBF5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				575CB50E1C8DEEC7001EBF5B /* WigitRentalModel.swift */,
 				575CB5101C8DF3C7001EBF5B /* WigitPaymentModel.swift */,
 			);
-			name = "Parse Models";
+			name = Model;
 			sourceTree = "<group>";
 		};
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */,
+				E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
@@ -250,14 +278,10 @@
 		81BA813C1A49DA1800E65899 = {
 			isa = PBXGroup;
 			children = (
-				571B22141C88B1FA00B190BD /* test.h */,
-				571B22151C88B1FA00B190BD /* test.m */,
 				81BA81471A49DA1800E65899 /* ParseStarterProject */,
 				814C3AC51B69877600E307BB /* Resources */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
 				81BA81461A49DA1800E65899 /* Products */,
-				E9B35B7B1C4642DB00D61878 /* mp2_fa15.pdf */,
-				E9B35B7C1C4642DB00D61878 /* mp3_fa15.pdf */,
 				571B22131C88B1F900B190BD /* ParseStarterProject-Swift-Bridging-Header.h */,
 				DCA23E7D44F70413272E1E0C /* Pods */,
 			);
@@ -274,25 +298,12 @@
 		81BA81471A49DA1800E65899 /* ParseStarterProject */ = {
 			isa = PBXGroup;
 			children = (
+				3C5D57D91D04A22A00E228A8 /* Controller */,
+				3C5D57D81D04A22400E228A8 /* View */,
 				575B23A71CBC35BB0074DF02 /* Third-Party Code */,
-				575CB50D1C8DEEB2001EBF5B /* Parse Models */,
+				575CB50D1C8DEEB2001EBF5B /* Model */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
-				81BA814C1A49DA1800E65899 /* ViewController.swift */,
-				E9837C0E1C3E12E400ACDC02 /* Signup.swift */,
-				814C3AC61B69877600E307BB /* Main.storyboard */,
-				E9B35B6F1C43693300D61878 /* Home.swift */,
-				E9B35B711C436E2000D61878 /* ListItem.swift */,
-				E9B35B771C4626EF00D61878 /* TermsAndConditions.swift */,
-				E9B35B7F1C46461F00D61878 /* ItemSearch.swift */,
-				E955DD401C4B8E5900CAE1BC /* MyProfile.swift */,
-				E93ACC3B1C521AD600268B60 /* ItemDetails.swift */,
-				575FD0201C80DEC80004BC54 /* Launch Screen.storyboard */,
 				57262C611C86189300DBEF0C /* WigitAPI.swift */,
-				571B22171C88B9CC00B190BD /* WigitCollectionViewCell.swift */,
-				57B9A8051C8F380D0080023C /* LenderDetailViewController.swift */,
-				57B9A8071C8F4D8D0080023C /* RenterDetailViewController.swift */,
-				575F623C1C8F7234002D116B /* PaymentInfoViewController.swift */,
-				5748E8291CBC3E24003B150D /* ContactViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -479,7 +490,6 @@
 				5748E82A1CBC3E24003B150D /* ContactViewController.swift in Sources */,
 				E955DD411C4B8E5900CAE1BC /* MyProfile.swift in Sources */,
 				572D892A1CC28ABA003E7DFC /* IQNSArray+Sort.m in Sources */,
-				571B22161C88B1FA00B190BD /* test.m in Sources */,
 				572D892D1CC28ABA003E7DFC /* IQUIView+Hierarchy.m in Sources */,
 				572D89431CC28AE7003E7DFC /* IQPreviousNextView.m in Sources */,
 				57B9A8061C8F380D0080023C /* LenderDetailViewController.swift in Sources */,
